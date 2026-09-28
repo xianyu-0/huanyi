@@ -1,0 +1,78 @@
+.qtcreator/
+# ==================== 构建目录 ====================
+build/
+build-*/
+*.user
+*.user.*
+
+# ==================== Qt 自动生成 ====================
+.qmake.stash
+.qmake.cache
+Makefile
+Makefile.Debug
+Makefile.Release
+moc_*.cpp
+moc_*.h
+moc_predefs.h
+ui_*.h
+qrc_*.cpp
+*.autosave
+.qtc_clangd/
+
+# ==================== OpenCV 库（体积大）====================
+OpenCV_MingW-main/
+OpenCV4.11_mingw13.1.0/
+opencv/
+
+# ==================== 数据库 ====================
+*.db
+*.sqlite
+*.sqlite3
+
+# ==================== 编译中间文件 ====================
+*.o
+*.obj
+*.exe
+*.dll
+*.a
+*.lib
+*.so
+
+# ==================== 运行时生成的图片 ====================
+# 注意：body.jpg / shirt.png 是模板，要保留；下面是生成的结果图，可以不上传
+images/generated.png
+images/tryon_result.png
+images/captured_body.jpg
+images/captured_mask.png
+images/body_mask.png
+
+# ==================== 临时文件 ====================
+*.tmp
+*.log
+*.cache
+.cache/
+
+# ==================== IDE ====================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==================== Windows ====================
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# ==================== 压缩包 ====================
+*.zip
+*.rar
+*.7z
+
+# ==================== 说明 ====================
+# 以下文件不要忽略（保留）：
+# - 源码：*.cpp, *.h, *.ui, CMakeLists.txt
+# - 配置：workflow_api.json, tryon_workflow_api.json
+# - 模型：haarcascade_frontalface_default.xml（小文件，可保留）
+# - 模板图片：images/body.jpg, images/shirt.png
+# - 样式：style.qss
+# - 文档：README.md
