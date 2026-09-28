@@ -18,6 +18,26 @@
 | 🚀 **自动启动 ComfyUI** | 点击按钮自动检测并启动 ComfyUI 服务 |
 
 ---
+## 📸 效果截图
+
+### 主界面
+
+![主界面](docs/screenshot_main.png)
+
+### AI 生图
+
+![AI 生图](docs/screenshot_generate.png)
+
+### 虚拟试穿
+
+![虚拟试穿](docs/screenshot_tryon.png)
+
+### 历史记录
+
+![历史记录](docs/screenshot_history.png)
+
+---
+
 
 ## 🛠 技术栈
 
