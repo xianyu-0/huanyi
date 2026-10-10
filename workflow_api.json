@@ -1,7 +1,7 @@
 {
   "3": {
     "inputs": {
-      "seed": 794949001325113,
+      "seed": 618699657016350,
       "steps": 20,
       "cfg": 8,
       "sampler_name": "euler",
@@ -40,8 +40,8 @@
   },
   "5": {
     "inputs": {
-      "width": 1024,
-      "height": 1024,
+      "width": 760,
+      "height": 768,
       "batch_size": 1
     },
     "class_type": "EmptyLatentImage",
@@ -102,6 +102,184 @@
     "class_type": "SaveImage",
     "_meta": {
       "title": "保存图像"
+    }
+  },
+  "15": {
+    "inputs": {
+      "mask_grow": 40,
+      "mixed_precision": "fp16",
+      "seed": 23728677703404,
+      "steps": 40,
+      "cfg": 2.5,
+      "attn_ckpt_version": "mix",
+      "device": "auto",
+      "image": [
+        "20",
+        0
+      ],
+      "mask": [
+        "20",
+        1
+      ],
+      "refer_image": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "CatVTONNode",
+    "_meta": {
+      "title": "CatVTON Node"
+    }
+  },
+  "17": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "19": {
+    "inputs": {
+      "image": "shirt.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "20": {
+    "inputs": {
+      "image": "body .jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "31": {
+    "inputs": {
+      "mask": [
+        "20",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "遮罩转换为图像"
+    }
+  },
+  "32": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "36": {
+    "inputs": {
+      "upscale_by": 1.5,
+      "seed": 1091912636516701,
+      "steps": 15,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 0.1,
+      "mode_type": "Linear",
+      "tile_width": 384,
+      "tile_height": 256,
+      "mask_blur": 8,
+      "tile_padding": 32,
+      "seam_fix_mode": "None",
+      "seam_fix_denoise": 1,
+      "seam_fix_width": 64,
+      "seam_fix_mask_blur": 8,
+      "seam_fix_padding": 16,
+      "force_uniform_tiles": true,
+      "tiled_decode": false,
+      "image": [
+        "15",
+        0
+      ],
+      "model": [
+        "38",
+        0
+      ],
+      "positive": [
+        "39",
+        0
+      ],
+      "negative": [
+        "40",
+        0
+      ],
+      "vae": [
+        "38",
+        2
+      ],
+      "upscale_model": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "UltimateSDUpscale",
+    "_meta": {
+      "title": "Ultimate SD Upscale"
+    }
+  },
+  "37": {
+    "inputs": {
+      "model_name": "4x-UltraSharp.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "加载放大模型"
+    }
+  },
+  "38": {
+    "inputs": {
+      "ckpt_name": "XXMix_9realisticSDXL_v1.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "39": {
+    "inputs": {
+      "text": "high quality, detailed, best quality, fashion, clothing, 8k, sharp focus",
+      "clip": [
+        "38",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "40": {
+    "inputs": {
+      "text": "watermark, worst quality, low quality, blurry, deformed, disfigured, extra limbs, mutated hands, poorly drawn face",
+      "clip": [
+        "38",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
     }
   }
 }

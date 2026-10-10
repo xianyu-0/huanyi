@@ -30,6 +30,8 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        maskeditordialog.cpp        # ★ 新增
+        maskeditordialog.h          # ★ 新增
         ${TS_FILES}
 )
 
