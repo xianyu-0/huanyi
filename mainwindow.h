@@ -9,12 +9,9 @@
 #include <QSqlDatabase>
 #include <QLabel>
 #include <QPushButton>
+#include <QWebSocket>
 #include <opencv2/opencv.hpp>
 #include <functional>
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
@@ -25,19 +22,13 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btnClick_clicked();
+    void onSmartActionClicked();
     void on_btnCapture_clicked();
-    void on_btnGenerate_clicked();
-    void on_btnTryOn_clicked();
-    void on_btnGenerateAndTryOn_clicked();
-    void on_btnClearMask_clicked();
-    void on_btnSelectShirt_clicked();
-    void on_btnSaveResult_clicked();
+    void showComparisonDialog();
+    void onBackToHistoryClicked();
+    void onUseHistoryImageClicked();
     void on_btnHistory_clicked();
-    void on_btnhttp_clicked();
-
-    void onReplyFinished(QNetworkReply *reply);
-    void onSubmitFinished(QNetworkReply *reply);
+    void on_btnSaveResult_clicked();
 
     void pollHistory();
     void updateLoadingText();
@@ -45,19 +36,18 @@ private slots:
     void onStartComfyUI();
     void onStopComfyUI();
     void onCheckComfyUI();
-    void onRestoreDefaultBody();
 
-    void onSmartActionClicked();
+    void onWsConnected();
+    void onWsDisconnected();
+    void onWsTextMessage(const QString &msg);
 
 private:
-    Ui::MainWindow *ui;
-
     QNetworkAccessManager *manager = nullptr;
     QSqlDatabase db;
 
     cv::VideoCapture cap;
     QTimer *timer = nullptr;
-
+    QTimer *animTimer = nullptr;
     QTimer *pollTimer = nullptr;
     QTimer *loadingTimer = nullptr;
     int loadingDots = 0;
@@ -77,47 +67,74 @@ private:
     int currentTaskType = 0;
     int pollCount = 0;
     int currentStage = 0;
+    int engineWaitSeconds = 0;
 
-    // ★ 新增：遮罩复用
-    QString lastBodyPathForMask;      // 上次用于涂抹的人物图
-    QString lastMaskForReuse;         // 上次生成的遮罩路径
+    QString lastBodyPathForMask;
+    QString lastMaskForReuse;
+    QString currentPromptForRegen;
 
-    // ★ 新增：重新生成上下文
-    QString currentPromptForRegen;    // 当前描述词（重新生成时复用）
-
-    QPushButton *btnSmartAction = nullptr;
+    // 纯代码 UI 控件
+    QLabel *lblImage = nullptr;
     QLabel *lblStatus = nullptr;
+    QPushButton *btnSmartAction = nullptr;
+    QPushButton *btnShowCompare = nullptr;
+    QPushButton *btnWardrobe = nullptr;
+    QWidget *bottomSubRowWidget = nullptr;
+    QPushButton *btnBackToHistory = nullptr;
+    QPushButton *btnUseHistoryImg = nullptr;
+
+    bool m_isViewingHistoryImage = false;
+    QString m_historyImgPath;
+
+    QWebSocket *comfyWebSocket = nullptr;
+    QString wsClientId;
+    bool wsConnected = false;
+    int currentNodeProgress = 0;
+    int currentNodeMax = 0;
 
     void setupLayout();
     void setupMenuBar();
-    void setLoading(bool loading);
+    void resetToHomeScreen();
+    void updateSmartUI();
+    void updateProgressUI();
+
     void initDatabase();
     void insertRecord(const QString &type, const QString &prompt, const QString &resultPath);
 
+    void setLoading(bool loading);
+    void showFriendlyError(const QString &title, const QString &errorDetails);
+    void showCenterLoading(const QString &title, const QString &subtitle);
+    void updateCenterProgress(int percent, const QString &msg);
+
     double imageSimilarity(const cv::Mat &a, const cv::Mat &b);
-    cv::Mat generateSmartMask(const cv::Mat &frame);
     QString findLatestMask();
+    QString protectFaceInMask(const QString &bodyPath, const QString &maskPath);
     void doTryOn(const QString &bodyPath, const QString &maskPath);
-    bool containsChinese(const QString &text);
-    void translateToEnglish(const QString &chinese);
+    void doAfterMaskReady();
+    QPixmap postProcessImage(const QPixmap &input);
+
+    void doTryOnWithLocalShirt();
+    void doTryOnWithWardrobe();
+    void openWardrobeManager();
     void startGenerate(const QString &prompt);
     QString buildWorkflowJson(const QString &prompt);
-    QPixmap postProcessImage(const QPixmap &input);
     void downloadImage(const QString &filename, const QString &subfolder, bool isTryOn);
+
+    bool containsChinese(const QString &text);
+    void translateToEnglish(const QString &chinese);
+    void tryMyMemoryTranslate(const QString &text);
+    void tryYoudaoTranslate(const QString &text);
 
     bool isComfyRunning();
     void freeComfyMemory();
     bool startComfyProcess();
     void ensureComfyUIRunning(std::function<void()> callback);
 
-    void updateSmartUI();
+    void connectWebSocket();
+    void disconnectWebSocket();
+    void ensureWebSocketReady();
 
-    void doAfterMaskReady(const cv::Mat &frame, const QString &bodyFile, const QString &ts);
-    void doTryOnWithLocalShirt();
-
-    // ★ 新增
-    void saveToWardrobe(const QString &imagePath);
-    void showComparisonDialog();
+    QString detectCategoryFromPrompt(const QString &prompt);
 };
 
 #endif // MAINWINDOW_H

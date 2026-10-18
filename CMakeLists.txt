@@ -9,8 +9,9 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools Network Sql)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools Network Sql)
+# ★ 加入了 WebSockets
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools Network Sql WebSockets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools Network Sql WebSockets)
 
 # ===== OpenCV 配置 =====
 set(OpenCV_DIR "C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0")
@@ -30,8 +31,8 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        maskeditordialog.cpp        # ★ 新增
-        maskeditordialog.h          # ★ 新增
+        maskeditordialog.cpp
+        maskeditordialog.h
         ${TS_FILES}
 )
 
@@ -39,6 +40,16 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(hy
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        wardrobemanager.h
+        sourceselectdialog.h
+        aipromptdialog.h
+        wardrobepickerdialog.h
+        wardrobemanagerdialog.h
+        wardrobemanager.cpp
+        sourceselectdialog.cpp
+        aipromptdialog.cpp
+        wardrobepickerdialog.cpp
+        wardrobemanagerdialog.cpp
     )
     qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 else()
@@ -60,6 +71,7 @@ target_link_libraries(hy PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Network
     Qt${QT_VERSION_MAJOR}::Sql
+    Qt${QT_VERSION_MAJOR}::WebSockets    # ★ 新增这一行
 )
 target_link_libraries(hy PRIVATE ${OpenCV_LIBS})
 
