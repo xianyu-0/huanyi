@@ -242,7 +242,6 @@ void MainWindow::setupMenuBar()
     connect(actWardrobe, &QAction::triggered, this, &MainWindow::openWardrobeManager);
     QMenu *helpMenu = menuBar->addMenu("帮助(&H)");
 
-    // ★ 核心修复：使用自定义 QDialog 替代 QMessageBox，彻底解决文字被截断的问题
     QAction *actAbout = helpMenu->addAction("ℹ️ 关于");
     connect(actAbout, &QAction::triggered, this, [=]() {
         QDialog dlg(this);
@@ -539,31 +538,9 @@ void MainWindow::doTryOn(const QString &bodyPath, const QString &maskPath) {
     QString protectedMask = protectFaceInMask(bodyPath, maskPath);
     if (!forceCopy(bodyPath, comfyInput + "body.jpg")) { QMessageBox::warning(this, "错误", "无法复制人物"); return; }
 
-    // ★ 核心修复：用 OpenCV 给遮罩进行膨胀和羽化，解决衣服像“纸片”一样贴上去的问题
-    cv::Mat maskMat = cv::imread(protectedMask.toStdString(), cv::IMREAD_UNCHANGED);
-    if (!maskMat.empty()) {
-        cv::Mat alpha;
-        if (maskMat.channels() == 4) {
-            std::vector<cv::Mat> ch; cv::split(maskMat, ch); alpha = ch[3];
-        } else {
-            cv::cvtColor(maskMat, alpha, cv::COLOR_BGR2GRAY);
-        }
-
-        // 1. 膨胀遮罩（往外扩一点点，包住原衣服边缘）
-        cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3));
-        cv::dilate(alpha, alpha, kernel);
-        // 2. 高斯羽化（15x15模糊，让边缘变得平滑过渡，AI 就能更好地融合）
-        cv::GaussianBlur(alpha, alpha, cv::Size(15, 15), 0);
-
-        if (maskMat.channels() == 4) {
-            std::vector<cv::Mat> ch; cv::split(maskMat, ch); ch[3] = alpha; cv::merge(ch, maskMat);
-        } else {
-            cv::cvtColor(alpha, maskMat, cv::COLOR_GRAY2BGR);
-        }
-        cv::imwrite(protectedMask.toStdString(), maskMat);
-    }
-
+    // ★ 恢复原始逻辑：直接复制遮罩图，不再做任何强制羽化处理
     if (!forceCopy(protectedMask, comfyInput + "body_mask.png")) { QMessageBox::warning(this, "错误", "无法复制遮罩"); return; }
+
     QString shirtSrc = !lastGeneratedImagePath.isEmpty() ? lastGeneratedImagePath : (currentShirtPath.isEmpty() ? QString("images/shirt.png") : currentShirtPath);
     if (!QFile::exists(shirtSrc)) { QMessageBox::warning(this, "错误", "找不到服装图"); currentStage=0; updateSmartUI(); return; }
     if (!forceCopy(shirtSrc, comfyInput + "shirt.png")) { QMessageBox::warning(this, "错误", "无法复制服装"); currentStage=0; updateSmartUI(); return; }
@@ -578,8 +555,6 @@ void MainWindow::doTryOn(const QString &bodyPath, const QString &maskPath) {
         QJsonObject n = root["15"].toObject();
         QJsonObject i = n["inputs"].toObject();
         i["seed"] = (qint64)QRandomGenerator::global()->bounded(1, 1000000000);
-        // ★ 核心修改：不再干预 mask_grow
-        // i["mask_grow"] = 10;
         n["inputs"] = i;
         root["15"] = n;
     }
@@ -684,8 +659,6 @@ void MainWindow::downloadImage(const QString &filename, const QString &subfolder
         QString savePath = isTryOn ? QString("images/history/tryon_%1.png").arg(ts) : QString("images/history/gen_%1.png").arg(ts);
 
         QImage img = QImage::fromData(data);
-
-        // ★ 核心修改：删除自动切图逻辑，让下载的图片原样显示
 
         QFile file(savePath); if (file.open(QIODevice::WriteOnly)) { file.write(data); file.close(); }
 
