@@ -1,0 +1,3 @@
+D:\QT\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\hy.dir/objects.a
+D:\QT\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\hy.dir/objects.a @CMakeFiles\hy.dir\objects1.rsp
+D:\QT\Tools\mingw1310_64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\hy.dir/objects.a -Wl,--no-whole-archive -o hy.exe -Wl,--out-implib,libhy.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\hy.dir\linkLibs.rsp

@@ -53,6 +53,16 @@
 #include <QPainter>
 #include <QScreen>
 #include <QBuffer>
+#include <QGraphicsDropShadowEffect>   // ★ 苹果风：画布卡片阴影
+
+// ==================== 苹果风状态条辅助函数 ====================
+// ★ 修改：圆角从 22px 改为 10px，padding 改为 10px 20px，不再是长条药丸
+static inline QString appleStatusStyle(const QString &color = "#1D1D1F") {
+    return QStringLiteral(
+               "QLabel { background-color: rgba(255,255,255,0.92); color: %1; "
+               "font-size: 14px; font-weight: 500; border-radius: 10px; "
+               "padding: 10px 20px; border: 1px solid rgba(0,0,0,0.06); }").arg(color);
+}
 
 // ==================== 工具函数 ====================
 static inline void applyMaskToAlpha(cv::Mat &bgra, const cv::Mat &mask)
@@ -64,8 +74,9 @@ static inline void applyMaskToAlpha(cv::Mat &bgra, const cv::Mat &mask)
 }
 
 // ==================== 构造函数 ====================
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(UserRole role, QWidget *parent)
     : QMainWindow(parent)
+    , m_currentRole(role)
 {
     setupLayout();
     QFile qssFile("C:/Users/31593/Documents/hy/style.qss");
@@ -75,14 +86,14 @@ MainWindow::MainWindow(QWidget *parent)
         qssFile.close();
     }
     QString msgBoxStyle = R"(
-        QMessageBox { background-color: #FFFFFF; }
-        QMessageBox QLabel { font-size: 14px; color: #374151; min-width: 260px; }
+        QMessageBox { background-color: #FFFFFF; border-radius: 16px; }
+        QMessageBox QLabel { font-size: 14px; color: #1D1D1F; min-width: 260px; }
         QMessageBox QPushButton {
             min-width: 110px; min-height: 38px; padding: 8px 22px; font-size: 14px;
-            border: none; border-radius: 8px; background-color: #8B5CF6; color: #FFFFFF;
+            border: none; border-radius: 19px; background-color: #5856D6; color: #FFFFFF;
         }
-        QMessageBox QPushButton:hover   { background-color: #7C3AED; }
-        QMessageBox QPushButton:pressed { background-color: #6D28D9; }
+        QMessageBox QPushButton:hover   { background-color: #4B49C4; }
+        QMessageBox QPushButton:pressed { background-color: #3F3DAF; }
     )";
     qApp->setStyleSheet(qApp->styleSheet() + msgBoxStyle);
     QIcon icon("C:/Users/31593/Documents/hy/images/app_icon.png");
@@ -143,80 +154,223 @@ MainWindow::~MainWindow()
     if (db.isOpen()) db.close();
 }
 
-// ==================== 纯代码构建高定 UI ====================
+// ==================== 苹果紫版 UI 构建 ====================
 void MainWindow::setupLayout()
 {
     QWidget *central = new QWidget(this);
     setCentralWidget(central);
-    QVBoxLayout *mainLayout = new QVBoxLayout(central);
-    mainLayout->setContentsMargins(20, 20, 20, 20);
-    mainLayout->setSpacing(12);
-    lblImage = new QLabel(central);
-    lblImage->setMinimumHeight(420);
-    lblImage->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    lblImage->setAlignment(Qt::AlignCenter);
-    lblImage->setStyleSheet("QLabel { background-color: #FAFAFA; border: 2px dashed #E5E7EB; border-radius: 16px; color: #6B7280; font-size: 15px; }");
-    mainLayout->addWidget(lblImage, 1);
-    lblStatus = new QLabel(central);
-    lblStatus->setAlignment(Qt::AlignCenter);
-    lblStatus->setMinimumHeight(48);
-    lblStatus->setStyleSheet("QLabel { background-color: #EFF6FF; color: #2563EB; font-size: 14px; border-radius: 8px; padding: 10px; }");
-    mainLayout->addWidget(lblStatus);
-    btnShowCompare = new QPushButton("📸 查看试穿前后对比", central);
-    btnShowCompare->setMinimumHeight(50);
-    btnShowCompare->setStyleSheet("QPushButton { background-color: #10B981; color: white; font-weight: bold; font-size: 16px; border-radius: 10px; } QPushButton:hover { background-color: #059669; }");
-    btnShowCompare->setVisible(false);
-    connect(btnShowCompare, &QPushButton::clicked, this, &MainWindow::showComparisonDialog);
-    mainLayout->addWidget(btnShowCompare);
-    btnSmartAction = new QPushButton("🚀 开始试穿", central);
-    btnSmartAction->setMinimumHeight(64);
-    btnSmartAction->setStyleSheet("QPushButton { background-color: #8B5CF6; color: white; font-weight: bold; font-size: 17px; border-radius: 10px; } QPushButton:hover { background-color: #7C3AED; } QPushButton:disabled { background-color: #D1D5DB; }");
-    connect(btnSmartAction, &QPushButton::clicked, this, &MainWindow::onSmartActionClicked);
-    mainLayout->addWidget(btnSmartAction);
-    btnBackToHistory = new QPushButton("⬅️ 返回历史列表", central);
-    btnUseHistoryImg = new QPushButton("🚀 用此图开始试穿", central);
-    btnBackToHistory->setMinimumHeight(50);
-    btnBackToHistory->setStyleSheet("QPushButton { background-color: #F3F4F6; color: #374151; border-radius: 8px; font-weight: bold; font-size: 16px; } QPushButton:hover { background-color: #E5E7EB; }");
-    btnUseHistoryImg->setMinimumHeight(50);
-    btnUseHistoryImg->setStyleSheet("QPushButton { background-color: #8B5CF6; color: white; border-radius: 8px; font-weight: bold; font-size: 16px; } QPushButton:hover { background-color: #7C3AED; }");
-    btnBackToHistory->setVisible(false); btnUseHistoryImg->setVisible(false);
-    QHBoxLayout *historyActionRow = new QHBoxLayout();
-    historyActionRow->addWidget(btnBackToHistory); historyActionRow->addWidget(btnUseHistoryImg);
-    mainLayout->addLayout(historyActionRow);
-    connect(btnBackToHistory, &QPushButton::clicked, this, &MainWindow::onBackToHistoryClicked);
-    connect(btnUseHistoryImg, &QPushButton::clicked, this, &MainWindow::onUseHistoryImageClicked);
-    bottomSubRowWidget = new QWidget(central);
-    QHBoxLayout *subRow = new QHBoxLayout(bottomSubRowWidget);
-    subRow->setContentsMargins(0,0,0,0); subRow->setSpacing(10);
-    btnWardrobe = new QPushButton("👕 我的衣服库", bottomSubRowWidget);
-    btnWardrobe->setMinimumHeight(46);
-    btnWardrobe->setStyleSheet("QPushButton { background-color: #EDE9FE; color: #6D28D9; font-size: 14px; border-radius: 8px; font-weight: bold; } QPushButton:hover { background-color: #DDD6FE; }");
-    connect(btnWardrobe, &QPushButton::clicked, this, &MainWindow::openWardrobeManager);
-    subRow->addWidget(btnWardrobe, 1);
-    QPushButton *btnHistoryUI = new QPushButton("📋 历史记录", bottomSubRowWidget);
-    btnHistoryUI->setMinimumHeight(46);
-    btnHistoryUI->setStyleSheet("QPushButton { background-color: #F3F4F6; color: #374151; font-size: 14px; border-radius: 8px; } QPushButton:hover { background-color: #E5E7EB; }");
-    connect(btnHistoryUI, &QPushButton::clicked, this, &MainWindow::on_btnHistory_clicked);
-    subRow->addWidget(btnHistoryUI, 1);
-    QPushButton *btnStop = new QPushButton("⏹ 停止当前任务", bottomSubRowWidget);
-    btnStop->setMinimumHeight(46);
-    btnStop->setStyleSheet("QPushButton { background-color: #F3F4F6; color: #374151; font-size: 14px; border-radius: 8px; } QPushButton:hover { background-color: #E5E7EB; }");
-    connect(btnStop, &QPushButton::clicked, this, [=]() {
+    central->setObjectName("centralRoot");
+    central->setStyleSheet("#centralRoot { background-color: #F5F5F7; }");
+
+    QHBoxLayout *rootLayout = new QHBoxLayout(central);
+    rootLayout->setContentsMargins(0, 0, 0, 0);
+    rootLayout->setSpacing(0);
+
+    // ==================== 左侧导航（半透明白 220px） ====================
+    QWidget *sidebar = new QWidget(central);
+    sidebar->setObjectName("sidebar");
+    sidebar->setFixedWidth(220);
+    sidebar->setStyleSheet(
+        "#sidebar { background-color: rgba(255,255,255,0.72); "
+        "border-right: 1px solid rgba(0,0,0,0.06); }");
+
+    QVBoxLayout *sidebarLayout = new QVBoxLayout(sidebar);
+    sidebarLayout->setContentsMargins(16, 32, 16, 24);
+    sidebarLayout->setSpacing(4);
+
+    // Logo
+    QLabel *logoLabel = new QLabel(
+        m_currentRole == Role_Seller ? "💼 幻衣" : "👗 幻衣", sidebar);
+    logoLabel->setAlignment(Qt::AlignCenter);
+    logoLabel->setStyleSheet(
+        "color: #1D1D1F; font-size: 20px; font-weight: 600; "
+        "letter-spacing: 0.5px; padding: 8px 0;");
+    sidebarLayout->addWidget(logoLabel);
+
+    // 角色小标签
+    QLabel *roleLabel = new QLabel(
+        m_currentRole == Role_Seller ? "商家模式" : "买家模式", sidebar);
+    roleLabel->setAlignment(Qt::AlignCenter);
+    roleLabel->setStyleSheet(
+        "color: #86868B; font-size: 11px; letter-spacing: 1px; "
+        "padding: 2px; margin-bottom: 24px;");
+    sidebarLayout->addWidget(roleLabel);
+
+    // 导航样式
+    QString navStyle =
+        "QPushButton { text-align: left; padding-left: 14px; "
+        "background-color: transparent; color: #1D1D1F; "
+        "font-size: 14px; font-weight: 500; border: none; "
+        "border-radius: 10px; } "
+        "QPushButton:hover { background-color: rgba(0,0,0,0.04); }";
+    QString navActiveStyle =
+        "QPushButton { text-align: left; padding-left: 11px; "
+        "background-color: rgba(88,86,214,0.10); color: #5856D6; "
+        "font-size: 14px; font-weight: 600; border: none; "
+        "border-left: 3px solid #5856D6; border-radius: 10px; }";
+
+    if (m_currentRole == Role_Seller) {
+        QPushButton *navManage = new QPushButton("📦   商品管理", sidebar);
+        navManage->setMinimumHeight(40);
+        navManage->setStyleSheet(navActiveStyle);
+        connect(navManage, &QPushButton::clicked, this, &MainWindow::openWardrobeManager);
+        sidebarLayout->addWidget(navManage);
+
+        QPushButton *navHistory = new QPushButton("📊   历史记录", sidebar);
+        navHistory->setMinimumHeight(40);
+        navHistory->setStyleSheet(navStyle);
+        connect(navHistory, &QPushButton::clicked, this, &MainWindow::on_btnHistory_clicked);
+        sidebarLayout->addWidget(navHistory);
+    } else {
+        QPushButton *navDesk = new QPushButton("🏠   试衣工作台", sidebar);
+        navDesk->setMinimumHeight(40);
+        navDesk->setStyleSheet(navActiveStyle);
+        sidebarLayout->addWidget(navDesk);
+
+        QPushButton *navCloset = new QPushButton("👕   我的衣橱", sidebar);
+        navCloset->setMinimumHeight(40);
+        navCloset->setStyleSheet(navStyle);
+        connect(navCloset, &QPushButton::clicked, this, &MainWindow::openWardrobeManager);
+        sidebarLayout->addWidget(navCloset);
+
+        QPushButton *navAlbum = new QPushButton("📋   历史相册", sidebar);
+        navAlbum->setMinimumHeight(40);
+        navAlbum->setStyleSheet(navStyle);
+        connect(navAlbum, &QPushButton::clicked, this, &MainWindow::on_btnHistory_clicked);
+        sidebarLayout->addWidget(navAlbum);
+    }
+
+    sidebarLayout->addStretch();
+
+    // 底部停止按钮（纯红字，无底色）
+    QPushButton *navStop = new QPushButton("⏹   停止当前任务", sidebar);
+    navStop->setMinimumHeight(36);
+    navStop->setStyleSheet(
+        "QPushButton { text-align: left; padding-left: 14px; "
+        "background-color: transparent; color: #FF3B30; "
+        "font-size: 13px; font-weight: 500; border: none; "
+        "border-radius: 10px; } "
+        "QPushButton:hover { background-color: rgba(255,59,48,0.08); }");
+    connect(navStop, &QPushButton::clicked, this, [=]() {
         if (pollTimer->isActive()) {
-            pollTimer->stop(); pollCount = 0; pendingAutoTryOn = false; pendingTryOnAfterGenerate = false;
-            currentStage = 0; updateSmartUI(); lblStatus->setText("⏹ 任务已手动停止");
-            lblStatus->setStyleSheet("QLabel { background-color: #F3F4F6; color: #6B7280; font-size: 14px; border-radius: 8px; padding: 10px; }");
+            pollTimer->stop(); pollCount = 0;
+            pendingAutoTryOn = false; pendingTryOnAfterGenerate = false;
+            currentStage = 0; updateSmartUI();
+            lblStatus->setText("⏹ 任务已手动停止");
+            lblStatus->setStyleSheet(appleStatusStyle("#86868B"));
         } else if (pendingTryOnAfterGenerate) {
-            pendingTryOnAfterGenerate = false; currentStage = 0; updateSmartUI(); lblStatus->setText("⏹ 已取消试穿");
+            pendingTryOnAfterGenerate = false; currentStage = 0; updateSmartUI();
+            lblStatus->setText("⏹ 已取消试穿");
         } else {
             lblStatus->setText("💡 当前没有正在执行的任务哦~");
-            lblStatus->setStyleSheet("QLabel { background-color: #EFF6FF; color: #2563EB; font-size: 14px; border-radius: 8px; padding: 10px; }");
+            lblStatus->setStyleSheet(appleStatusStyle("#5856D6"));
             QTimer::singleShot(3000, this, [=]() { updateSmartUI(); });
         }
     });
-    subRow->addWidget(btnStop, 1);
+    sidebarLayout->addWidget(navStop);
+
+    rootLayout->addWidget(sidebar);
+
+    // ==================== 右侧沉浸工作区 ====================
+    QWidget *mainContent = new QWidget(central);
+    mainContent->setObjectName("mainContent");
+    mainContent->setStyleSheet("#mainContent { background-color: #F5F5F7; }");
+
+    QVBoxLayout *mainLayout = new QVBoxLayout(mainContent);
+    mainLayout->setContentsMargins(32, 28, 32, 28);
+    mainLayout->setSpacing(18);
+
+    // 状态条（白底，圆角 10px）
+    lblStatus = new QLabel(mainContent);
+    lblStatus->setAlignment(Qt::AlignCenter);
+    lblStatus->setMinimumHeight(44);
+    lblStatus->setStyleSheet(appleStatusStyle("#5856D6"));
+    mainLayout->addWidget(lblStatus);
+
+    // 画布（白卡 20px 圆角 + 极柔阴影）
+    lblImage = new QLabel(mainContent);
+    lblImage->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    lblImage->setAlignment(Qt::AlignCenter);
+    lblImage->setStyleSheet(
+        "QLabel { background-color: #FFFFFF; border-radius: 20px; "
+        "color: #86868B; font-size: 15px; border: none; }");
+    QGraphicsDropShadowEffect *cardShadow = new QGraphicsDropShadowEffect(this);
+    cardShadow->setBlurRadius(30);
+    cardShadow->setColor(QColor(0, 0, 0, 10));
+    cardShadow->setOffset(0, 10);
+    lblImage->setGraphicsEffect(cardShadow);
+    mainLayout->addWidget(lblImage, 1);
+
+    // 历史接管行（默认隐藏）
+    btnBackToHistory = new QPushButton("← 返回列表", mainContent);
+    btnUseHistoryImg = new QPushButton("用此图试穿 →", mainContent);
+    btnBackToHistory->setMinimumHeight(48);
+    btnUseHistoryImg->setMinimumHeight(48);
+    btnBackToHistory->setStyleSheet(
+        "QPushButton { background-color: #FFFFFF; color: #1D1D1F; "
+        "border: 1px solid rgba(0,0,0,0.08); border-radius: 24px; "
+        "font-size: 15px; font-weight: 500; } "
+        "QPushButton:hover { background-color: #F5F5F7; }");
+    btnUseHistoryImg->setStyleSheet(
+        "QPushButton { background-color: #5856D6; color: #FFFFFF; "
+        "border: none; border-radius: 24px; "
+        "font-size: 15px; font-weight: 600; } "
+        "QPushButton:hover { background-color: #4B49C4; }");
+    btnBackToHistory->setVisible(false);
+    btnUseHistoryImg->setVisible(false);
+
+    QHBoxLayout *historyRow = new QHBoxLayout();
+    historyRow->setSpacing(12);
+    historyRow->addWidget(btnBackToHistory, 1);
+    historyRow->addWidget(btnUseHistoryImg, 1);
+    mainLayout->addLayout(historyRow);
+
+    connect(btnBackToHistory, &QPushButton::clicked, this, &MainWindow::onBackToHistoryClicked);
+    connect(btnUseHistoryImg, &QPushButton::clicked, this, &MainWindow::onUseHistoryImageClicked);
+
+    // 对比按钮（白底胶囊）
+    btnShowCompare = new QPushButton("查看试穿对比", mainContent);
+    btnShowCompare->setMinimumHeight(48);
+    btnShowCompare->setStyleSheet(
+        "QPushButton { background-color: #FFFFFF; color: #1D1D1F; "
+        "border: 1px solid rgba(0,0,0,0.08); border-radius: 24px; "
+        "font-size: 15px; font-weight: 600; } "
+        "QPushButton:hover { background-color: #F5F5F7; }");
+    btnShowCompare->setVisible(false);
+    connect(btnShowCompare, &QPushButton::clicked, this, &MainWindow::showComparisonDialog);
+    mainLayout->addWidget(btnShowCompare);
+
+    // 主操作按钮（苹果紫胶囊）
+    btnSmartAction = new QPushButton("开始试穿", mainContent);
+    btnSmartAction->setMinimumHeight(52);
+    btnSmartAction->setStyleSheet(
+        "QPushButton { background-color: #5856D6; color: #FFFFFF; "
+        "border: none; border-radius: 26px; "
+        "font-size: 16px; font-weight: 600; letter-spacing: 1px; } "
+        "QPushButton:hover { background-color: #4B49C4; } "
+        "QPushButton:disabled { background-color: #C7C7CC; }");
+    connect(btnSmartAction, &QPushButton::clicked, this, &MainWindow::onSmartActionClicked);
+    mainLayout->addWidget(btnSmartAction);
+
+    // 兼容占位：btnWardrobe（功能已移入侧栏，保留指针防旧调用崩溃）
+    btnWardrobe = new QPushButton("👕 我的衣服库", mainContent);
+    btnWardrobe->setVisible(false);
+    mainLayout->addWidget(btnWardrobe);
+
+    // 兼容占位：bottomSubRowWidget（高度 0，零视觉影响）
+    bottomSubRowWidget = new QWidget(mainContent);
+    bottomSubRowWidget->setFixedHeight(0);
+    bottomSubRowWidget->setVisible(false);
     mainLayout->addWidget(bottomSubRowWidget);
-    this->setWindowTitle("幻衣 - AI 虚拟试穿系统"); this->setMinimumSize(900, 720);
+
+    rootLayout->addWidget(mainContent, 1);
+
+    // ==================== 窗口尺寸 ====================
+    this->setWindowTitle(
+        m_currentRole == Role_Seller ? "幻衣 - 商家管理端" : "幻衣 - AI 虚拟试穿系统");
+    this->resize(1280, 800);
+    this->setMinimumSize(1100, 700);
+
     setupMenuBar();
     resetToHomeScreen();
 }
@@ -254,16 +408,16 @@ void MainWindow::setupMenuBar()
 
         QLabel *titleLabel = new QLabel("👕 幻衣 - AI 虚拟试穿系统", &dlg);
         titleLabel->setAlignment(Qt::AlignCenter);
-        titleLabel->setStyleSheet("font-size: 20px; font-weight: bold; color: #8B5CF6; margin-top: 10px;");
+        titleLabel->setStyleSheet("font-size: 20px; font-weight: 600; color: #5856D6; margin-top: 10px;");
 
         QLabel *descLabel = new QLabel("基于 <b>Qt + OpenCV + ComfyUI + CatVTON</b> 开发。\n\n为您提供一站式、高保真的线上虚拟试穿体验。", &dlg);
         descLabel->setAlignment(Qt::AlignCenter);
         descLabel->setWordWrap(true);
-        descLabel->setStyleSheet("font-size: 14px; color: #4B5563; line-height: 1.6; margin-top: 15px;");
+        descLabel->setStyleSheet("font-size: 14px; color: #1D1D1F; line-height: 1.6; margin-top: 15px;");
 
         QPushButton *btnOk = new QPushButton("确定", &dlg);
         btnOk->setFixedSize(120, 42);
-        btnOk->setStyleSheet("QPushButton { background-color: #8B5CF6; color: white; border-radius: 8px; font-size: 15px; font-weight: bold; } QPushButton:hover { background-color: #7C3AED; }");
+        btnOk->setStyleSheet("QPushButton { background-color: #5856D6; color: white; border-radius: 21px; font-size: 15px; font-weight: 600; } QPushButton:hover { background-color: #4B49C4; }");
         connect(btnOk, &QPushButton::clicked, &dlg, &QDialog::accept);
 
         layout->addWidget(titleLabel);
@@ -277,54 +431,69 @@ void MainWindow::setupMenuBar()
 
 // ==================== 状态与动效 ====================
 void MainWindow::resetToHomeScreen() {
-    lblImage->setText(R"(
-        <div style='text-align: center; font-family: "Microsoft YaHei", sans-serif; margin-top: 50px;'>
-            <div style='margin-bottom: 20px;'>
-                <span style='font-size: 90px;'>👗</span>
+    if (m_currentRole == Role_Seller) {
+        lblImage->setText(R"(
+            <div style='text-align: center; margin-top: 70px;
+                        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;'>
+                <div style='font-size: 72px; margin-bottom: 24px;'>💼</div>
+                <h1 style='color: #1D1D1F; font-size: 40px; font-weight: 600;
+                           letter-spacing: -0.5px; margin: 0;'>商家管理后台</h1>
+                <p style='color: #86868B; font-size: 16px; margin-top: 16px;
+                          font-weight: 400;'>点击左侧「商品管理」，开始整理您的商品库</p>
             </div>
-            <h1 style='margin: 0; font-size: 42px; font-weight: 900; color: #8B5CF6; letter-spacing: 3px;'>幻衣 · AI 虚拟试穿</h1>
-            <p style='color: #6B7280; font-size: 18px; margin-top: 15px; font-weight: 300;'>无需试衣间，一键预见最美的自己</p>
-            <table width='100%' style='margin-top: 60px;'><tr><td align='center'>
-                <table><tr>
-                    <td style='padding: 10px 20px; background: #F3E8FF; border-radius: 10px;'><span style='font-size: 20px;'>✨</span> <span style='color: #7E22CE; font-weight: bold; margin-left: 5px;'>AI 智能生成</span></td>
-                    <td width='20'></td>
-                    <td style='padding: 10px 20px; background: #D1FAE5; border-radius: 10px;'><span style='font-size: 20px;'>⚡</span> <span style='color: #047857; font-weight: bold; margin-left: 5px;'>秒级换装</span></td>
-                </tr></table>
-            </td></tr></table>
-        </div>
-    )");
-    m_isViewingHistoryImage = false; btnBackToHistory->setVisible(false); btnUseHistoryImg->setVisible(false);
-    btnSmartAction->setVisible(true); bottomSubRowWidget->setVisible(true); btnShowCompare->setVisible(false);
+        )");
+    } else {
+        lblImage->setText(R"(
+            <div style='text-align: center;
+                        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+                        margin-top: 50px;'>
+                <div style='font-size: 80px; margin-bottom: 24px;'>👗</div>
+                <h1 style='margin: 0; font-size: 42px; font-weight: 600;
+                           color: #1D1D1F; letter-spacing: -0.5px;'>幻衣</h1>
+                <p style='color: #5856D6; font-size: 18px; margin-top: 8px;
+                          font-weight: 500;'>AI 虚拟试穿</p>
+                <p style='color: #86868B; font-size: 15px; margin-top: 20px;
+                          font-weight: 400;'>无需试衣间，一键预见最美的自己</p>
+            </div>
+        )");
+    }
+
+    m_isViewingHistoryImage = false;
+    if (btnBackToHistory)   btnBackToHistory->setVisible(false);
+    if (btnUseHistoryImg)   btnUseHistoryImg->setVisible(false);
+    if (btnSmartAction)     btnSmartAction->setVisible(m_currentRole == Role_Buyer);
+    if (btnShowCompare)     btnShowCompare->setVisible(false);
+    if (bottomSubRowWidget) bottomSubRowWidget->setVisible(true);
+
     updateSmartUI();
 }
 
 void MainWindow::showCenterLoading(const QString &title, const QString &subtitle) {
     QString html = QString(R"(
-        <div style='text-align: center; margin-top: 90px; font-family: "Microsoft YaHei", sans-serif;'>
-            <div style='display: inline-block; padding: 25px; border-radius: 50%; background: linear-gradient(135deg, #F3E8FF 0%, #E0F2FE 100%); box-shadow: 0 10px 25px rgba(139,92,246,0.15); margin-bottom: 25px;'>
+        <div style='text-align: center; margin-top: 90px; font-family: "PingFang SC", "Microsoft YaHei", sans-serif;'>
+            <div style='display: inline-block; padding: 25px; border-radius: 50%; background: linear-gradient(135deg, rgba(88,86,214,0.12) 0%, rgba(88,86,214,0.04) 100%); margin-bottom: 25px;'>
                 <span style='font-size: 50px;'>⚙️</span>
             </div>
-            <h2 style='color: #1E40AF; font-size: 26px; font-weight: bold; margin-bottom: 10px;'>%1</h2>
-            <p style='color: #6B7280; font-size: 16px; font-weight: bold;'>%2</p>
+            <h2 style='color: #1D1D1F; font-size: 24px; font-weight: 600; margin-bottom: 10px;'>%1</h2>
+            <p style='color: #86868B; font-size: 14px; font-weight: 400;'>%2</p>
         </div>
     )").arg(title, subtitle);
     lblImage->setText(html); lblImage->repaint(); QApplication::processEvents();
 }
 
 void MainWindow::updateCenterProgress(int percent, const QString &msg) {
-    int offset = (QDateTime::currentMSecsSinceEpoch() / 10) % 100;
     QString html = QString(R"(
-        <div style='text-align: center; margin-top: 90px; font-family: "Microsoft YaHei", sans-serif;'>
-            <h2 style='color: #8B5CF6; font-size: 24px; font-weight: bold; margin-bottom: 25px;'>%1</h2>
-            <table width='480' align='center' style='background-color: #F3F4F6; border-radius: 11px; overflow: hidden;'>
+        <div style='text-align: center; margin-top: 90px; font-family: "PingFang SC", "Microsoft YaHei", sans-serif;'>
+            <h2 style='color: #1D1D1F; font-size: 22px; font-weight: 600; margin-bottom: 24px;'>%1</h2>
+            <table width='460' align='center' style='background-color: rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;'>
                 <tr><td>
-                    <div style='width: %2%; height: 22px; background: linear-gradient(90deg, #8B5CF6, #D946EF, #8B5CF6); background-size: 200%% 100%%; background-position: %3%% 0; border-radius: 11px;'></div>
+                    <div style='width: %2%; height: 8px; background: #5856D6; border-radius: 8px;'></div>
                 </td></tr>
             </table>
-            <h3 style='color: #D946EF; font-size: 38px; font-weight: 900; margin-top: 20px;'>%2<span style='font-size: 20px; color: #6B7280;'>%</span></h3>
-            <p style='color: #9CA3AF; font-size: 14px; margin-top: 10px;'>请稍候，AI 正在全力以赴为您创作...</p>
+            <h3 style='color: #5856D6; font-size: 32px; font-weight: 700; margin-top: 18px;'>%2<span style='font-size: 18px; color: #86868B;'>%</span></h3>
+            <p style='color: #AEAEB2; font-size: 13px; margin-top: 10px;'>请稍候，AI 正在全力以赴为您创作...</p>
         </div>
-    )").arg(msg).arg(percent).arg(offset);
+    )").arg(msg).arg(percent);
     lblImage->setText(html); lblImage->repaint();
 }
 
@@ -336,24 +505,24 @@ void MainWindow::updateProgressUI() {
         if (currentTaskType == 0) {
             if (percent < 25) {
                 lblStatus->setText("💡【步骤 1/3】AI 正在深度解析描述词...");
-                lblStatus->setStyleSheet("QLabel { background-color: #FEF3C7; color: #92400E; font-size: 15px; font-weight: bold; border-radius: 8px; padding: 10px; }");
+                lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
             } else if (percent < 75) {
                 lblStatus->setText("🎨【步骤 2/3】正在精心绘制服装轮廓与细节...");
-                lblStatus->setStyleSheet("QLabel { background-color: #DBEAFE; color: #1E40AF; font-size: 15px; font-weight: bold; border-radius: 8px; padding: 10px; }");
+                lblStatus->setStyleSheet(appleStatusStyle("#5856D6"));
             } else {
                 lblStatus->setText("✨【步骤 3/3】正在渲染高清光影，马上就好...");
-                lblStatus->setStyleSheet("QLabel { background-color: #D1FAE5; color: #065F46; font-size: 15px; font-weight: bold; border-radius: 8px; padding: 10px; }");
+                lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
             }
         } else {
             if (percent < 25) {
                 lblStatus->setText("📐【步骤 1/3】正在精准解析您的身体轮廓...");
-                lblStatus->setStyleSheet("QLabel { background-color: #FEF3C7; color: #92400E; font-size: 15px; font-weight: bold; border-radius: 8px; padding: 10px; }");
+                lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
             } else if (percent < 75) {
                 lblStatus->setText("👗【步骤 2/3】正在为您穿上新衣并处理自然褶皱...");
-                lblStatus->setStyleSheet("QLabel { background-color: #DBEAFE; color: #1E40AF; font-size: 15px; font-weight: bold; border-radius: 8px; padding: 10px; }");
+                lblStatus->setStyleSheet(appleStatusStyle("#5856D6"));
             } else {
                 lblStatus->setText("🖼️【步骤 3/3】正在融合背景，生成最终试穿效果...");
-                lblStatus->setStyleSheet("QLabel { background-color: #D1FAE5; color: #065F46; font-size: 15px; font-weight: bold; border-radius: 8px; padding: 10px; }");
+                lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
             }
         }
     }
@@ -361,17 +530,26 @@ void MainWindow::updateProgressUI() {
 
 void MainWindow::updateSmartUI() {
     if (!btnSmartAction || !lblStatus || m_isViewingHistoryImage) return;
+
+    // ★ 新增：如果是卖家模式，且处于空闲状态，显示对应的提示
+    if (m_currentRole == Role_Seller && currentStage == 0) {
+        btnShowCompare->setVisible(false);
+        lblStatus->setText("💡 商家模式：请在左侧导航进入【商品管理】");
+        lblStatus->setStyleSheet(appleStatusStyle("#5856D6"));
+        return; // 直接返回，跳过下面的买家逻辑
+    }
+
     switch (currentStage) {
     case 0:
         btnShowCompare->setVisible(false);
         if (pendingTryOnAfterGenerate) {
             btnSmartAction->setText("👕 继续试穿"); btnSmartAction->setEnabled(true);
             lblStatus->setText("✅ 服装已生成！查看效果后点击【继续试穿】");
-            lblStatus->setStyleSheet("QLabel { background-color: #D1FAE5; color: #065F46; font-size: 14px; border-radius: 8px; padding: 10px; }");
+            lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
         } else {
             btnSmartAction->setText("🚀 开始试穿"); btnSmartAction->setEnabled(true);
             lblStatus->setText("💡 现在请：点击下方按钮开始试穿");
-            lblStatus->setStyleSheet("QLabel { background-color: #EFF6FF; color: #2563EB; font-size: 14px; border-radius: 8px; padding: 10px; }");
+            lblStatus->setStyleSheet(appleStatusStyle("#5856D6"));
         }
         break;
     case 3:
@@ -382,6 +560,11 @@ void MainWindow::updateSmartUI() {
 
 // ==================== 主流程交互 ====================
 void MainWindow::onSmartActionClicked() {
+    if (m_currentRole == Role_Seller) {
+        QMessageBox::information(this, "提示", "您当前处于商家模式，请使用左侧【商品管理】管理衣物。");
+        return;
+    }
+
     if (pendingTryOnAfterGenerate) {
         pendingTryOnAfterGenerate = false; currentStage = 3; updateSmartUI();
         lblStatus->setText("⏳ 正在准备试穿...");
@@ -392,10 +575,10 @@ void MainWindow::onSmartActionClicked() {
     QDialog dlg(this); dlg.setWindowTitle("开始试穿"); dlg.setFixedSize(360, 320); dlg.setStyleSheet("QDialog { background-color: #FFFFFF; }");
     QVBoxLayout *layout = new QVBoxLayout(&dlg);
     QLabel *iconLabel = new QLabel("📸", &dlg); iconLabel->setAlignment(Qt::AlignCenter); iconLabel->setStyleSheet("font-size: 48px; margin-top: 10px;");
-    QLabel *textLabel = new QLabel("请选择人物图片来源", &dlg); textLabel->setAlignment(Qt::AlignCenter); textLabel->setStyleSheet("font-size: 16px; font-weight: bold; margin-bottom: 15px; color: #374151;");
-    QPushButton *btnCapture = new QPushButton("📷 实时抓拍", &dlg); btnCapture->setMinimumHeight(46); btnCapture->setStyleSheet("QPushButton { background-color: #8B5CF6; color: white; border-radius: 8px; font-size: 15px; font-weight: bold; } QPushButton:hover { background-color: #7C3AED; }");
-    QPushButton *btnDefault = new QPushButton("🖼 使用默认图", &dlg); btnDefault->setMinimumHeight(46); btnDefault->setStyleSheet("QPushButton { background-color: #F3F4F6; color: #374151; border-radius: 8px; font-size: 15px; font-weight: bold; } QPushButton:hover { background-color: #E5E7EB; }");
-    QPushButton *btnCancel = new QPushButton("取消", &dlg); btnCancel->setMinimumHeight(40); btnCancel->setStyleSheet("QPushButton { background-color: transparent; color: #9CA3AF; border: none; font-size: 14px; }");
+    QLabel *textLabel = new QLabel("请选择人物图片来源", &dlg); textLabel->setAlignment(Qt::AlignCenter); textLabel->setStyleSheet("font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #1D1D1F;");
+    QPushButton *btnCapture = new QPushButton("📷 实时抓拍", &dlg); btnCapture->setMinimumHeight(46); btnCapture->setStyleSheet("QPushButton { background-color: #5856D6; color: white; border-radius: 23px; font-size: 15px; font-weight: 600; } QPushButton:hover { background-color: #4B49C4; }");
+    QPushButton *btnDefault = new QPushButton("🖼 使用默认图", &dlg); btnDefault->setMinimumHeight(46); btnDefault->setStyleSheet("QPushButton { background-color: #F5F5F7; color: #1D1D1F; border-radius: 23px; font-size: 15px; font-weight: 600; } QPushButton:hover { background-color: #E5E5EA; }");
+    QPushButton *btnCancel = new QPushButton("取消", &dlg); btnCancel->setMinimumHeight(40); btnCancel->setStyleSheet("QPushButton { background-color: transparent; color: #86868B; border: none; font-size: 14px; }");
     layout->addWidget(iconLabel); layout->addWidget(textLabel); layout->addWidget(btnCapture); layout->addWidget(btnDefault); layout->addWidget(btnCancel);
     int ret = 0;
     connect(btnCapture, &QPushButton::clicked, [&](){ ret = 1; dlg.accept(); });
@@ -406,7 +589,7 @@ void MainWindow::onSmartActionClicked() {
     if (ret == 1) {
         cap.open(0); if (!cap.isOpened()) { QMessageBox::warning(this, "错误", "无法打开摄像头"); return; }
         cap.set(cv::CAP_PROP_FRAME_WIDTH, 640); cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480); timer->start(30);
-        lblStatus->setText("💡 摄像头已开启，站好后再次点击【抓拍并继续】"); lblStatus->setStyleSheet("QLabel { background-color: #FEF3C7; color: #92400E; font-size: 14px; border-radius: 8px; padding: 10px; }");
+        lblStatus->setText("💡 摄像头已开启，站好后再次点击【抓拍并继续】"); lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
         btnSmartAction->setText("📸 抓拍并继续");
         disconnect(btnSmartAction, &QPushButton::clicked, this, &MainWindow::onSmartActionClicked);
         connect(btnSmartAction, &QPushButton::clicked, this, [=]() {
@@ -424,16 +607,16 @@ void MainWindow::onSmartActionClicked() {
         if (!lastMaskForReuse.isEmpty() && QFile::exists(lastMaskForReuse) && !lastBodyPathForMask.isEmpty()) {
             QDialog askDlg(this); askDlg.setWindowTitle("复用上次遮罩"); askDlg.setFixedSize(320, 180);
             QVBoxLayout *aLayout = new QVBoxLayout(&askDlg);
-            QLabel *aLbl = new QLabel("检测到上次已画过遮罩，是否直接复用？", &askDlg); aLbl->setAlignment(Qt::AlignCenter); aLbl->setWordWrap(true); aLbl->setStyleSheet("font-size: 15px; color: #374151; font-weight: bold; margin: 10px;");
+            QLabel *aLbl = new QLabel("检测到上次已画过遮罩，是否直接复用？", &askDlg); aLbl->setAlignment(Qt::AlignCenter); aLbl->setWordWrap(true); aLbl->setStyleSheet("font-size: 15px; color: #1D1D1F; font-weight: 600; margin: 10px;");
             QHBoxLayout *btnLayout = new QHBoxLayout();
-            QPushButton *btnYes = new QPushButton("复用", &askDlg); btnYes->setStyleSheet("background-color: #8B5CF6; color: white; border-radius: 6px; padding: 8px 20px; font-weight: bold;");
-            QPushButton *btnNo = new QPushButton("重新画", &askDlg); btnNo->setStyleSheet("background-color: #F3F4F6; color: #374151; border-radius: 6px; padding: 8px 20px; font-weight: bold;");
+            QPushButton *btnYes = new QPushButton("复用", &askDlg); btnYes->setStyleSheet("background-color: #5856D6; color: white; border-radius: 19px; padding: 8px 20px; font-weight: 600;");
+            QPushButton *btnNo = new QPushButton("重新画", &askDlg); btnNo->setStyleSheet("background-color: #F5F5F7; color: #1D1D1F; border-radius: 19px; padding: 8px 20px; font-weight: 600;");
             btnLayout->addWidget(btnNo); btnLayout->addWidget(btnYes); aLayout->addWidget(aLbl); aLayout->addLayout(btnLayout);
             connect(btnYes, &QPushButton::clicked, &askDlg, &QDialog::accept); connect(btnNo, &QPushButton::clicked, &askDlg, &QDialog::reject);
             if (askDlg.exec() == QDialog::Accepted) { currentMaskPath = lastMaskForReuse; reuseMask = true; }
         }
         if (!reuseMask) {
-            lblStatus->setText("✏️ 第 1 步：涂抹需要替换的衣服区域"); lblStatus->setStyleSheet("QLabel { background-color: #FEF3C7; color: #92400E; font-size: 14px; border-radius: 8px; padding: 10px; }");
+            lblStatus->setText("✏️ 第 1 步：涂抹需要替换的衣服区域"); lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
             QString ts = QDateTime::currentDateTime().toString("yyyyMMddhhmmss");
             MaskEditorDialog maskDlg(defaultBody, this);
             if (maskDlg.exec() != QDialog::Accepted) { updateSmartUI(); lblImage->setText("✅ 已取消涂抹"); return; }
@@ -470,7 +653,7 @@ void MainWindow::on_btnCapture_clicked() {
         }
     }
     if (reuseMask) { doAfterMaskReady(); return; }
-    lblStatus->setText("✏️ 第 1 步：涂抹需要替换的衣服区域"); lblStatus->setStyleSheet("QLabel { background-color: #FEF3C7; color: #92400E; font-size: 14px; border-radius: 8px; padding: 10px; }");
+    lblStatus->setText("✏️ 第 1 步：涂抹需要替换的衣服区域"); lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
     MaskEditorDialog dlg(bodyFile, this); if (dlg.exec() != QDialog::Accepted) { updateSmartUI(); return; }
     cv::Mat mask = dlg.getMask(); if (mask.empty() || cv::countNonZero(mask) == 0) { QMessageBox::warning(this, "未涂抹", "没有涂抹"); updateSmartUI(); return; }
     cv::Mat rgba; cv::cvtColor(frame, rgba, cv::COLOR_BGR2BGRA); applyMaskToAlpha(rgba, mask);
@@ -488,7 +671,7 @@ void MainWindow::doAfterMaskReady() {
         QString prompt = aiDlg.getPrompt(); if (prompt.isEmpty()) { updateSmartUI(); return; }
         currentPromptForRegen = prompt; currentStage = 3; updateSmartUI();
         lblStatus->setText("⏳ 第 3 步：AI 正在准备生成服装...");
-        lblStatus->setStyleSheet("QLabel { background-color: #FEF3C7; color: #92400E; font-size: 14px; border-radius: 8px; padding: 10px; }");
+        lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
         ensureComfyUIRunning([=]() {
             pendingAutoTryOn = true; pendingMaskPath = currentMaskPath;
             if (containsChinese(prompt)) translateToEnglish(prompt); else startGenerate(prompt);
@@ -505,7 +688,7 @@ void MainWindow::doTryOnWithWardrobe() {
     WardrobeItem item = picker.selectedItem(); if (item.id < 0 || !QFile::exists(item.imagePath)) { QMessageBox::warning(this, "错误", "衣服文件丢失"); return; }
     currentShirtPath = item.imagePath; lastGeneratedImagePath = ""; currentStage = 3; updateSmartUI();
     lblStatus->setText(QString("⏳ 第 3 步：正在准备试穿「%1」...").arg(item.name));
-    lblStatus->setStyleSheet("QLabel { background-color: #FEF3C7; color: #92400E; font-size: 14px; border-radius: 8px; padding: 10px; }");
+    lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
     ensureComfyUIRunning([=]() { freeComfyMemory(); doTryOn(currentBodyPath, currentMaskPath); });
 }
 
@@ -523,7 +706,7 @@ void MainWindow::doTryOnWithLocalShirt() {
         }
     }
     currentShirtPath = filePath; lastGeneratedImagePath = ""; currentStage = 3; updateSmartUI();
-    lblStatus->setText("⏳ 第 3 步：正在使用本地图片准备试穿..."); lblStatus->setStyleSheet("QLabel { background-color: #FEF3C7; color: #92400E; font-size: 14px; border-radius: 8px; padding: 10px; }");
+    lblStatus->setText("⏳ 第 3 步：正在使用本地图片准备试穿..."); lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
     ensureComfyUIRunning([=]() { freeComfyMemory(); doTryOn(currentBodyPath, currentMaskPath); });
 }
 
@@ -538,7 +721,6 @@ void MainWindow::doTryOn(const QString &bodyPath, const QString &maskPath) {
     QString protectedMask = protectFaceInMask(bodyPath, maskPath);
     if (!forceCopy(bodyPath, comfyInput + "body.jpg")) { QMessageBox::warning(this, "错误", "无法复制人物"); return; }
 
-    // ★ 恢复原始逻辑：直接复制遮罩图，不再做任何强制羽化处理
     if (!forceCopy(protectedMask, comfyInput + "body_mask.png")) { QMessageBox::warning(this, "错误", "无法复制遮罩"); return; }
 
     QString shirtSrc = !lastGeneratedImagePath.isEmpty() ? lastGeneratedImagePath : (currentShirtPath.isEmpty() ? QString("images/shirt.png") : currentShirtPath);
@@ -683,7 +865,7 @@ void MainWindow::downloadImage(const QString &filename, const QString &subfolder
             pendingTryOnAfterGenerate = false;
             updateSmartUI();
             lblStatus->setText("✅ 试穿完成！您可以点击下方按钮查看对比。");
-            lblStatus->setStyleSheet("QLabel { background-color: #D1FAE5; color: #065F46; font-size: 14px; border-radius: 8px; padding: 10px; }");
+            lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
             btnShowCompare->setVisible(true);
         }
         else {
@@ -691,7 +873,7 @@ void MainWindow::downloadImage(const QString &filename, const QString &subfolder
             if (pendingAutoTryOn) {
                 pendingAutoTryOn = false;
                 lblStatus->setText("✅ 服装生成完毕，请选择下一步操作。");
-                lblStatus->setStyleSheet("QLabel { background-color: #D1FAE5; color: #065F46; font-size: 14px; border-radius: 8px; padding: 10px; }");
+                lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
                 QApplication::processEvents();
 
                 QMessageBox box(this); box.setWindowTitle("AI 服装生成完成"); box.setText("对生成的衣服满意吗？"); box.setInformativeText("您可以存入衣服库方便以后复用，或直接试穿。");
@@ -702,7 +884,7 @@ void MainWindow::downloadImage(const QString &filename, const QString &subfolder
                 box.exec();
                 if (box.clickedButton() == btnTry) {
                     pendingTryOnAfterGenerate = true; currentStage=0; updateSmartUI();
-                    lblStatus->setText("✅ 点击【继续试穿】"); lblStatus->setStyleSheet("QLabel { background-color: #D1FAE5; color: #065F46; font-size: 14px; border-radius: 8px; padding: 10px; }");
+                    lblStatus->setText("✅ 点击【继续试穿】"); lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
                 } else if (box.clickedButton() == btnSave) {
                     QString autoCategory = detectCategoryFromPrompt(currentPromptForRegen);
                     bool ok = false;
@@ -713,7 +895,7 @@ void MainWindow::downloadImage(const QString &filename, const QString &subfolder
                         if (id > 0) { WardrobeItem it = WardrobeManager::getItemById(id); currentShirtPath = it.imagePath; }
                     }
                     pendingTryOnAfterGenerate = true; currentStage=0; updateSmartUI();
-                    lblStatus->setText("✅ 已存入库，点击【继续试穿】"); lblStatus->setStyleSheet("QLabel { background-color: #D1FAE5; color: #065F46; font-size: 14px; border-radius: 8px; padding: 10px; }");
+                    lblStatus->setText("✅ 已存入库，点击【继续试穿】"); lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
                 } else if (box.clickedButton() == btnRegen) {
                     bool ok = false; QString newPrompt = QInputDialog::getText(this, "重新生成", "描述词：", QLineEdit::Normal, currentPromptForRegen, &ok);
                     if (ok && !newPrompt.trimmed().isEmpty()) {
@@ -845,7 +1027,7 @@ void MainWindow::onStartComfyUI() {
             checkTimer->stop(); checkTimer->deleteLater(); delete retry;
             currentStage = 0; updateSmartUI();
             lblStatus->setText("✅ ComfyUI 已启动并就绪");
-            lblStatus->setStyleSheet("QLabel { background-color: #D1FAE5; color: #065F46; font-size: 14px; border-radius: 8px; padding: 10px; }");
+            lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
         } else if (*retry >= 240) {
             checkTimer->stop(); checkTimer->deleteLater(); delete retry;
             currentStage = 0; updateSmartUI();
@@ -907,27 +1089,27 @@ void MainWindow::on_btnHistory_clicked() {
     QDialog *dialog = new QDialog(this); dialog->setWindowTitle("📋 历史记录中心");
     QScreen *screen = QGuiApplication::primaryScreen(); QRect screenGeometry = screen->availableGeometry();
     int w = qMin(1100, screenGeometry.width() - 100); int h = qMin(750, screenGeometry.height() - 100);
-    dialog->resize(w, h); dialog->setStyleSheet("QDialog { background-color: #F9FAFB; }");
+    dialog->resize(w, h); dialog->setStyleSheet("QDialog { background-color: #F5F5F7; }");
     QVBoxLayout *mainLayout = new QVBoxLayout(dialog); mainLayout->setContentsMargins(20, 20, 20, 20); mainLayout->setSpacing(15);
     QHBoxLayout *topBar = new QHBoxLayout();
     QPushButton *btnAll = new QPushButton("全部", dialog); QPushButton *btnTry = new QPushButton("仅试穿", dialog); QPushButton *btnGen = new QPushButton("仅生图", dialog);
-    QString filterStyle = "QPushButton { background-color: #FFFFFF; color: #374151; border: 1px solid #E5E7EB; padding: 6px 16px; border-radius: 15px; font-size: 14px; } QPushButton:hover { background-color: #F3F4F6; } QPushButton:checked { background-color: #8B5CF6; color: white; border: none; }";
+    QString filterStyle = "QPushButton { background-color: #FFFFFF; color: #1D1D1F; border: 1px solid rgba(0,0,0,0.08); padding: 6px 16px; border-radius: 16px; font-size: 14px; } QPushButton:hover { background-color: #F5F5F7; } QPushButton:checked { background-color: #5856D6; color: white; border: none; }";
     btnAll->setCheckable(true); btnAll->setChecked(true); btnTry->setCheckable(true); btnGen->setCheckable(true);
     btnAll->setStyleSheet(filterStyle); btnTry->setStyleSheet(filterStyle); btnGen->setStyleSheet(filterStyle);
     topBar->addWidget(btnAll); topBar->addWidget(btnTry); topBar->addWidget(btnGen); topBar->addStretch();
-    QLabel *lblCount = new QLabel("共 0 条记录", dialog); lblCount->setStyleSheet("color: #6B7280; font-size: 13px;");
+    QLabel *lblCount = new QLabel("共 0 条记录", dialog); lblCount->setStyleSheet("color: #86868B; font-size: 13px;");
     topBar->addWidget(lblCount); mainLayout->addLayout(topBar);
     QListWidget *listWidget = new QListWidget(dialog);
     listWidget->setViewMode(QListView::IconMode); listWidget->setIconSize(QSize(240, 240)); listWidget->setGridSize(QSize(260, 300));
     listWidget->setResizeMode(QListView::Adjust); listWidget->setSpacing(15);
-    listWidget->setStyleSheet("QListWidget { background-color: transparent; border: none; outline: none; } QListWidget::item { border: 2px solid transparent; border-radius: 12px; background-color: white; padding: 10px; } QListWidget::item:hover { border: 2px solid #DDD6FE; } QListWidget::item:selected { border: 2px solid #8B5CF6; background-color: #F5F3FF; }");
+    listWidget->setStyleSheet("QListWidget { background-color: transparent; border: none; outline: none; } QListWidget::item { border: 2px solid transparent; border-radius: 16px; background-color: white; padding: 10px; } QListWidget::item:hover { border: 2px solid rgba(88,86,214,0.3); } QListWidget::item:selected { border: 2px solid #5856D6; background-color: rgba(88,86,214,0.06); }");
     mainLayout->addWidget(listWidget, 1);
     QHBoxLayout *bottomBar = new QHBoxLayout();
     QPushButton *btnView = new QPushButton("👁 查看大图", dialog); QPushButton *btnExport = new QPushButton("💾 导出图片", dialog); QPushButton *btnRetry = new QPushButton("👕 再次试穿", dialog); QPushButton *btnDelete = new QPushButton("🗑 删除记录", dialog); QPushButton *btnClose = new QPushButton("关闭", dialog);
-    QString actionStyle = "QPushButton { background-color: #F3F4F6; color: #374151; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: bold; } QPushButton:hover { background-color: #E5E7EB; } QPushButton:disabled { background-color: #F9FAFB; color: #D1D5DB; }";
-    QString dangerStyle = "QPushButton { background-color: #FEE2E2; color: #DC2626; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: bold; } QPushButton:hover { background-color: #FECACA; } QPushButton:disabled { background-color: #F9FAFB; color: #D1D5DB; }";
+    QString actionStyle = "QPushButton { background-color: #FFFFFF; color: #1D1D1F; padding: 10px 20px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); font-size: 14px; font-weight: 500; } QPushButton:hover { background-color: #F5F5F7; } QPushButton:disabled { background-color: #F5F5F7; color: #C7C7CC; border: none; }";
+    QString dangerStyle = "QPushButton { background-color: rgba(255,59,48,0.08); color: #FF3B30; padding: 10px 20px; border-radius: 20px; border: none; font-size: 14px; font-weight: 500; } QPushButton:hover { background-color: rgba(255,59,48,0.15); } QPushButton:disabled { background-color: #F5F5F7; color: #C7C7CC; }";
     btnView->setStyleSheet(actionStyle); btnExport->setStyleSheet(actionStyle); btnRetry->setStyleSheet(actionStyle); btnDelete->setStyleSheet(dangerStyle);
-    btnClose->setStyleSheet("QPushButton { background-color: transparent; color: #6B7280; font-size: 14px; border: none; } QPushButton:hover { color: #374151; }");
+    btnClose->setStyleSheet("QPushButton { background-color: transparent; color: #86868B; font-size: 14px; border: none; } QPushButton:hover { color: #1D1D1F; }");
     btnView->setEnabled(false); btnExport->setEnabled(false); btnRetry->setEnabled(false); btnDelete->setEnabled(false);
     bottomBar->addWidget(btnView); bottomBar->addWidget(btnExport); bottomBar->addWidget(btnRetry); bottomBar->addWidget(btnDelete);
     bottomBar->addStretch(); bottomBar->addWidget(btnClose); mainLayout->addLayout(bottomBar);
@@ -941,11 +1123,11 @@ void MainWindow::on_btnHistory_clicked() {
             QString type = query.value(0).toString(); QString resultPath = query.value(1).toString(); QString time = query.value(2).toString();
             QPixmap pix(resultPath); QPixmap roundedPix(240, 240); roundedPix.fill(Qt::transparent);
             if(!pix.isNull()) {
-                QPainter painter(&roundedPix); painter.setRenderHint(QPainter::Antialiasing); painter.setBrush(QColor("#F3F4F6")); painter.setPen(Qt::NoPen);
-                painter.drawRoundedRect(0, 0, 240, 240, 10, 10);
+                QPainter painter(&roundedPix); painter.setRenderHint(QPainter::Antialiasing); painter.setBrush(QColor("#F5F5F7")); painter.setPen(Qt::NoPen);
+                painter.drawRoundedRect(0, 0, 240, 240, 12, 12);
                 QPixmap scaled = pix.scaled(230, 230, Qt::KeepAspectRatio, Qt::SmoothTransformation);
                 painter.drawPixmap((240 - scaled.width()) / 2, (240 - scaled.height()) / 2, scaled); painter.end();
-            } else { roundedPix.fill(QColor("#E5E7EB")); }
+            } else { roundedPix.fill(QColor("#E5E5EA")); }
             QString title = (type == "生图") ? "✨ 生成服装" : "👕 试穿效果";
             QListWidgetItem *item = new QListWidgetItem(QIcon(roundedPix), title + "\n" + time, listWidget);
             item->setTextAlignment(Qt::AlignHCenter | Qt::AlignBottom); item->setData(Qt::UserRole, resultPath); item->setData(Qt::UserRole + 1, type);
@@ -960,7 +1142,7 @@ void MainWindow::on_btnHistory_clicked() {
         QListWidgetItem *cur = listWidget->currentItem();
         if (!cur) { btnView->setEnabled(false); btnExport->setEnabled(false); btnRetry->setEnabled(false); btnDelete->setEnabled(false); return; }
         btnView->setEnabled(true); btnExport->setEnabled(true); btnDelete->setEnabled(true);
-        if (cur->data(Qt::UserRole + 1).toString() == "生图") { btnRetry->setEnabled(true); btnRetry->setStyleSheet("QPushButton { background-color: #8B5CF6; color: white; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: bold; }"); }
+        if (cur->data(Qt::UserRole + 1).toString() == "生图") { btnRetry->setEnabled(true); btnRetry->setStyleSheet("QPushButton { background-color: #5856D6; color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 600; }"); }
         else { btnRetry->setEnabled(false); btnRetry->setStyleSheet(actionStyle); }
     });
     auto doView = [=]() {
@@ -974,7 +1156,7 @@ void MainWindow::on_btnHistory_clicked() {
         lblImage->setPixmap(pix.scaled(lblImage->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         currentResultPixmap = pix;
         lblStatus->setText("🖼 正在查看历史大图，请选择返回或使用此图试穿。");
-        lblStatus->setStyleSheet("QLabel { background-color: #EFF6FF; color: #2563EB; font-size: 14px; border-radius: 8px; padding: 10px; }");
+        lblStatus->setStyleSheet(appleStatusStyle("#5856D6"));
         btnSmartAction->setVisible(false);
         bottomSubRowWidget->setVisible(false);
         btnBackToHistory->setVisible(true);
@@ -995,7 +1177,7 @@ void MainWindow::on_btnHistory_clicked() {
         currentShirtPath = path; lastGeneratedImagePath = path;
         if (currentBodyPath.isEmpty() || currentMaskPath.isEmpty()) { QMessageBox::warning(dialog, "缺少信息", "缺少人物图或遮罩，请重新开始试穿流程。"); dialog->accept(); return; }
         dialog->accept(); currentStage = 3; updateSmartUI();
-        lblStatus->setText("⏳ 正在使用历史服装重新试穿，请稍候..."); lblStatus->setStyleSheet("QLabel { background-color: #FEF3C7; color: #92400E; font-size: 14px; border-radius: 8px; padding: 10px; }");
+        lblStatus->setText("⏳ 正在使用历史服装重新试穿，请稍候..."); lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
         ensureComfyUIRunning([=]() { freeComfyMemory(); doTryOn(currentBodyPath, currentMaskPath); });
     });
     connect(btnDelete, &QPushButton::clicked, this, [=]() {
@@ -1018,7 +1200,6 @@ void MainWindow::showComparisonDialog() {
     QString afterPath = lastGeneratedImagePath;
     if (!QFile::exists(beforePath) || !QFile::exists(afterPath)) return;
 
-    // 直接使用 QImage 加载，规避 OpenCV 的拼接拉伸
     QImage imgBefore(beforePath);
     QImage imgAfter(afterPath);
     if (imgBefore.isNull() || imgAfter.isNull()) return;
@@ -1033,20 +1214,17 @@ void MainWindow::showComparisonDialog() {
     p.setRenderHint(QPainter::Antialiasing);
     p.setRenderHint(QPainter::SmoothPixmapTransform);
 
-    // 左侧：等比缩放并居中绘制原图
     QImage scaledBefore = imgBefore.scaled(halfW - 20, canvasH - 20, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     int x1 = (halfW - scaledBefore.width()) / 2;
     int y1 = (canvasH - scaledBefore.height()) / 2;
     p.drawImage(x1, y1, scaledBefore);
 
-    // 右侧：等比缩放并居中绘制试穿图
     QImage scaledAfter = imgAfter.scaled(halfW - 20, canvasH - 20, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     int x2 = halfW + (halfW - scaledAfter.width()) / 2;
     int y2 = (canvasH - scaledAfter.height()) / 2;
     p.drawImage(x2, y2, scaledAfter);
 
-    // 画中间的紫色分隔线
-    p.setPen(QPen(QColor(139, 92, 246), 4));
+    p.setPen(QPen(QColor(88, 86, 214), 3));
     p.drawLine(halfW, 0, halfW, canvasH);
     p.end();
 
@@ -1054,7 +1232,7 @@ void MainWindow::showComparisonDialog() {
     QVBoxLayout *layout = new QVBoxLayout(&dlg);
     QLabel *title = new QLabel("左：原图      右：试穿效果", &dlg);
     title->setAlignment(Qt::AlignCenter);
-    title->setStyleSheet("font-size: 15px; font-weight: bold; color: #8B5CF6; padding: 10px;");
+    title->setStyleSheet("font-size: 15px; font-weight: 600; color: #5856D6; padding: 10px;");
     layout->addWidget(title);
 
     QLabel *imgLabel = new QLabel(&dlg);
@@ -1065,7 +1243,7 @@ void MainWindow::showComparisonDialog() {
     QHBoxLayout *btns = new QHBoxLayout();
     QPushButton *btnSave = new QPushButton("💾 保存对比图", &dlg);
     QPushButton *btnOk = new QPushButton("✅ 完成", &dlg);
-    QString btnStyle = "QPushButton { background-color: #8B5CF6; color: white; padding: 10px 20px; border-radius: 6px; font-size: 14px; } QPushButton:hover { background-color: #7C3AED; }";
+    QString btnStyle = "QPushButton { background-color: #5856D6; color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 500; } QPushButton:hover { background-color: #4B49C4; }";
     btnSave->setStyleSheet(btnStyle); btnOk->setStyleSheet(btnStyle);
 
     connect(btnSave, &QPushButton::clicked, [&]() {
@@ -1089,7 +1267,7 @@ void MainWindow::onUseHistoryImageClicked() {
     currentShirtPath = m_historyImgPath; lastGeneratedImagePath = "";
     resetToHomeScreen();
     lblStatus->setText("✅ 已选择历史服装，请点击【开始试穿】！");
-    lblStatus->setStyleSheet("QLabel { background-color: #D1FAE5; color: #065F46; font-size: 14px; border-radius: 8px; padding: 10px; }");
+    lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
 }
 
 // ==================== 翻译辅助与其他 ====================
@@ -1108,7 +1286,7 @@ void MainWindow::showFriendlyError(const QString &t, const QString &d) {
     if (d.contains("ran out of memory") || d.contains("OOM")) friendlyMsg = "显存不足，请关闭其他占用显卡的软件。";
     else if (d.contains("Connection refused") || d.contains("timed out")) friendlyMsg = "无法连接 AI 引擎，请检查后台是否运行。";
     lblStatus->setText("❌ " + friendlyMsg);
-    lblStatus->setStyleSheet("QLabel { background-color: #FEE2E2; color: #991B1B; font-size: 14px; border-radius: 8px; padding: 10px; }");
+    lblStatus->setStyleSheet(appleStatusStyle("#FF3B30"));
     QTimer::singleShot(4000, this, [=]() { updateSmartUI(); });
 }
 

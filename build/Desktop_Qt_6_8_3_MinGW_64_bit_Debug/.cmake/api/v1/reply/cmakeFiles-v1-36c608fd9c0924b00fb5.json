@@ -1,0 +1,2809 @@
+{
+	"globsDependent" : 
+	[
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.c",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.c++",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.cc",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.ch",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.cpp",
+			"paths" : 
+			[
+				"C:/Users/31593/Documents/hy/aipromptdialog.cpp",
+				"C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+				"C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/hy_autogen/EWIEGA46WW/moc_aipromptdialog.cpp",
+				"C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/hy_autogen/EWIEGA46WW/moc_mainwindow.cpp",
+				"C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/hy_autogen/EWIEGA46WW/moc_maskeditordialog.cpp",
+				"C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/hy_autogen/EWIEGA46WW/moc_sourceselectdialog.cpp",
+				"C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/hy_autogen/EWIEGA46WW/moc_wardrobemanagerdialog.cpp",
+				"C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/hy_autogen/EWIEGA46WW/moc_wardrobepickerdialog.cpp",
+				"C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/hy_autogen/mocs_compilation.cpp",
+				"C:/Users/31593/Documents/hy/main.cpp",
+				"C:/Users/31593/Documents/hy/mainwindow.cpp",
+				"C:/Users/31593/Documents/hy/maskeditordialog.cpp",
+				"C:/Users/31593/Documents/hy/sourceselectdialog.cpp",
+				"C:/Users/31593/Documents/hy/wardrobemanager.cpp",
+				"C:/Users/31593/Documents/hy/wardrobemanagerdialog.cpp",
+				"C:/Users/31593/Documents/hy/wardrobepickerdialog.cpp"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.cxx",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.h",
+			"paths" : 
+			[
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/calib3d/calib3d_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/core_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cv_cpu_dispatch.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cv_cpu_helper.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cvdef.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/interface.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/msa_macros.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/types_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/cvconfig.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/features2d/hal/interface.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/all_indices.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/allocator.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/any.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/autotuned_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/composite_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/config.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/defines.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/dist.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/dummy.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/dynamic_bitset.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/general.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/ground_truth.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/heap.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/hierarchical_clustering_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/index_testing.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/kdtree_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/kdtree_single_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/kmeans_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/linear_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/logger.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/lsh_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/lsh_table.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/matrix.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/nn_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/object_factory.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/params.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/random.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/result_set.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/sampling.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/saving.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/simplex_downhill.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/timer.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/highgui/highgui_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgcodecs/imgcodecs_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgcodecs/ios.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgcodecs/legacy/constants_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgcodecs/macosx.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgproc/hal/interface.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgproc/imgproc_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgproc/types_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/photo/legacy/constants_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/video/legacy/constants_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videoio/legacy/constants_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videoio/videoio_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/calib3d/calib3d_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/core_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cv_cpu_dispatch.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cv_cpu_helper.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cvdef.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/interface.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/msa_macros.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/types_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/cvconfig.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/features2d/hal/interface.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/all_indices.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/allocator.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/any.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/autotuned_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/composite_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/config.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/defines.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/dist.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/dummy.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/dynamic_bitset.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/general.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/ground_truth.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/heap.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/hierarchical_clustering_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/index_testing.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/kdtree_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/kdtree_single_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/kmeans_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/linear_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/logger.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/lsh_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/lsh_table.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/matrix.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/nn_index.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/object_factory.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/params.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/random.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/result_set.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/sampling.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/saving.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/simplex_downhill.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/timer.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/highgui/highgui_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgcodecs/imgcodecs_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgcodecs/ios.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgcodecs/legacy/constants_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgcodecs/macosx.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgproc/hal/interface.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgproc/imgproc_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgproc/types_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/photo/legacy/constants_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/video/legacy/constants_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videoio/legacy/constants_c.h",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videoio/videoio_c.h",
+				"C:/Users/31593/Documents/hy/aipromptdialog.h",
+				"C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/hy_autogen/include/ui_mainwindow.h",
+				"C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/hy_autogen/moc_predefs.h",
+				"C:/Users/31593/Documents/hy/mainwindow.h",
+				"C:/Users/31593/Documents/hy/maskeditordialog.h",
+				"C:/Users/31593/Documents/hy/sourceselectdialog.h",
+				"C:/Users/31593/Documents/hy/wardrobemanager.h",
+				"C:/Users/31593/Documents/hy/wardrobemanagerdialog.h",
+				"C:/Users/31593/Documents/hy/wardrobepickerdialog.h"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.h++",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.hh",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.hpp",
+			"paths" : 
+			[
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/aruco.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/aruco/aruco_calib.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/aruco/charuco.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/bgsegm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/bioinspired.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/bioinspired/bioinspired.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/bioinspired/retina.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/bioinspired/retinafasttonemapping.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/bioinspired/transientareassegmentationmodule.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/calib3d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/calib3d/calib3d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ccalib.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ccalib/multicalib.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ccalib/omnidir.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ccalib/randpattern.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/affine.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/async.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/base.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/bindings_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/bufferpool.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/check.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/block.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/border_interpolate.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/color.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/common.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/datamov_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/detail/color_detail.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/detail/reduce.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/detail/reduce_key_val.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/detail/transform_detail.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/detail/type_traits_detail.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/detail/vec_distance_detail.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/dynamic_smem.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/emulation.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/filters.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/funcattrib.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/functional.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/limits.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/reduce.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/saturate_cast.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/scan.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/simd_functions.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/transform.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/type_traits.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/utility.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/vec_distance.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/vec_math.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/vec_traits.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/warp.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/warp_reduce.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda/warp_shuffle.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda_stream_accessor.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cuda_types.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cvstd.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cvstd.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/cvstd_wrapper.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/detail/async_promise.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/detail/dispatch_helper.impl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/detail/exception_ptr.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/directx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/dualquaternion.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/dualquaternion.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/eigen.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/fast_math.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/hal.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_avx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_avx512.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_cpp.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_forward.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_lasx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_lsx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_math.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_msa.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_neon.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_rvv071.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_rvv_scalable.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_sse.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_sse_em.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_vsx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/intrin_wasm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/hal/simd_utils.impl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/mat.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/mat.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/matx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/matx.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/neon_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/ocl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/ocl_genbase.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/ocl_defs.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/opencl_info.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/opencl_svm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/autogenerated/opencl_clblas.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/autogenerated/opencl_clfft.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/autogenerated/opencl_core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/autogenerated/opencl_core_wrappers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/autogenerated/opencl_gl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/autogenerated/opencl_gl_wrappers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/opencl_clblas.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/opencl_clfft.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/opencl_core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/opencl_core_wrappers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/opencl_gl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/opencl_gl_wrappers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/opencl_svm_20.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/opencl_svm_definitions.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opencl/runtime/opencl_svm_hsa_extension.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/opengl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/operations.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/optim.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/ovx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/parallel/backend/parallel_for.openmp.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/parallel/backend/parallel_for.tbb.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/parallel/parallel_backend.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/persistence.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/quaternion.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/quaternion.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/saturate.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/simd_intrinsics.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/softfloat.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/sse_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/traits.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/types.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utility.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utils/allocator_stats.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utils/allocator_stats.impl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utils/filesystem.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utils/fp_control_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utils/instrumentation.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utils/logger.defines.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utils/logger.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utils/logtag.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utils/tls.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/utils/trace.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/va_intel.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/version.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core/vsx_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/core_detect.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/ar_hmdb.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/ar_sports.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/dataset.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/fr_adience.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/fr_lfw.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/gr_chalearn.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/gr_skig.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/hpe_humaneva.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/hpe_parse.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/ir_affine.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/ir_robot.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/is_bsds.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/is_weizmann.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/msm_epfl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/msm_middlebury.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/or_imagenet.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/or_mnist.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/or_pascal.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/or_sun.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/pd_caltech.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/pd_inria.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/slam_kitti.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/slam_tumindoor.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/sr_bsds.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/sr_div2k.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/sr_general100.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/tr_chars.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/tr_icdar.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/tr_svt.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/track_alov.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/track_vot.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/datasets/util.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn/all_layers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn/dict.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn/dnn.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn/dnn.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn/layer.details.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn/layer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn/shape_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn/utils/debug_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn/utils/inference_engine.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn/version.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dnn_superres.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/dpm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/face.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/face/bif.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/face/face_alignment.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/face/facemark.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/face/facemarkAAM.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/face/facemarkLBF.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/face/facemark_train.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/face/facerec.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/face/mace.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/face/predict_collector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/features2d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/features2d/features2d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/flann.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/flann_base.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/flann/miniflann.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/fuzzy.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/fuzzy/fuzzy_F0_math.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/fuzzy/fuzzy_F1_math.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/fuzzy/fuzzy_image.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/fuzzy/types.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/hfs.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/highgui.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/highgui/highgui.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/img_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/img_hash/average_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/img_hash/block_mean_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/img_hash/color_moment_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/img_hash/img_hash_base.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/img_hash/marr_hildreth_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/img_hash/phash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/img_hash/radial_variance_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgcodecs.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgcodecs/imgcodecs.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgproc/bindings.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgproc/detail/gcgraph.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgproc/detail/legacy.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgproc/hal/hal.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgproc/imgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/imgproc/segmentation.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/intensity_transform.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/line_descriptor.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/line_descriptor/descriptor.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/mcc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/mcc/ccm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/mcc/checker_detector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/mcc/checker_model.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ml.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ml/ml.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ml/ml.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/objdetect.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/objdetect/aruco_board.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/objdetect/aruco_detector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/objdetect/aruco_dictionary.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/objdetect/barcode.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/objdetect/charuco_detector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/objdetect/detection_based_tracker.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/objdetect/face.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/objdetect/graphical_code_detector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/objdetect/objdetect.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/opencv.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/opencv_modules.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/optflow.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/optflow/motempl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/optflow/pcaflow.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/optflow/rlofflow.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/optflow/sparse_matching_gpc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/phase_unwrapping.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/phase_unwrapping/histogramphaseunwrapping.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/phase_unwrapping/phase_unwrapping.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/photo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/photo/cuda.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/photo/photo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/plot.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/quality.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/quality/quality_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/quality/qualitybase.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/quality/qualitybrisque.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/quality/qualitygmsd.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/quality/qualitymse.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/quality/qualitypsnr.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/quality/qualityssim.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rapid.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/map.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/mapaffine.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/mapper.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/mappergradaffine.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/mappergradeuclid.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/mappergradproj.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/mappergradshift.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/mappergradsimilar.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/mapperpyramid.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/mapprojec.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/reg/mapshift.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rgbd.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rgbd/colored_kinfu.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rgbd/depth.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rgbd/detail/pose_graph.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rgbd/dynafu.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rgbd/intrinsics.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rgbd/kinfu.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rgbd/large_kinfu.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rgbd/linemod.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/rgbd/volume.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/saliency.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/saliency/saliencyBaseClasses.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/saliency/saliencySpecializedClasses.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/shape.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/shape/emdL1.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/shape/hist_cost.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/shape/shape.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/shape/shape_distance.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/shape/shape_transformer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/signal.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/signal/signal_resample.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stereo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stereo/descriptor.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stereo/quasi_dense_stereo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stereo/stereo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/autocalib.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/blenders.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/camera.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/exposure_compensate.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/matchers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/motion_estimators.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/seam_finders.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/timelapsers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/util.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/util_inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/warpers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/detail/warpers_inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/stitching/warpers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/structured_light.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/structured_light/graycodepattern.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/structured_light/sinusoidalpattern.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/structured_light/structured_light.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/superres.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/superres/optical_flow.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/surface_matching.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/surface_matching/icp.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/surface_matching/pose_3d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/surface_matching/ppf_helpers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/surface_matching/ppf_match_3d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/surface_matching/t_hash_int.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/text.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/text/erfilter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/text/ocr.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/text/swt_text_detection.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/text/textDetector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/tracking.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/tracking/feature.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/tracking/kalman_filters.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/tracking/onlineBoosting.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/tracking/tldDataset.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/tracking/tracking.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/tracking/tracking_by_matching.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/tracking/tracking_internals.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/tracking/tracking_legacy.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/tracking/twist.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/video.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/video/background_segm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/video/detail/tracking.detail.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/video/tracking.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/video/video.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videoio.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videoio/registry.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videoio/videoio.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/deblurring.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/fast_marching.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/fast_marching_inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/frame_source.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/global_motion.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/inpainting.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/log.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/motion_core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/motion_stabilizing.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/optical_flow.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/outlier_rejection.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/ring_buffer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/stabilizer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/videostab/wobble_suppression.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/wechat_qrcode.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/world.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xfeatures2d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xfeatures2d/cuda.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xfeatures2d/nonfree.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/brightedges.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/color_match.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/deriche_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/disparity_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/edge_drawing.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/edge_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/edgeboxes.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/edgepreserving_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/estimated_covariance.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/fast_hough_transform.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/fast_line_detector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/find_ellipses.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/fourier_descriptors.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/lsc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/paillou_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/peilin.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/radon_transform.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/ridgefilter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/run_length_morphology.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/scansegment.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/seeds.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/segmentation.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/slic.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/sparse_match_interpolator.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/structured_edge_detection.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/ximgproc/weighted_median_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xobjdetect.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xphoto.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xphoto/bm3d_image_denoising.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xphoto/dct_image_denoising.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xphoto/inpainting.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xphoto/oilpainting.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xphoto/tonemap.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/include/opencv2/xphoto/white_balance.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/aruco.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/aruco/aruco_calib.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/aruco/charuco.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/bgsegm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/bioinspired.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/bioinspired/bioinspired.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/bioinspired/retina.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/bioinspired/retinafasttonemapping.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/bioinspired/transientareassegmentationmodule.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/calib3d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/calib3d/calib3d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ccalib.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ccalib/multicalib.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ccalib/omnidir.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ccalib/randpattern.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/affine.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/async.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/base.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/bindings_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/bufferpool.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/check.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/block.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/border_interpolate.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/color.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/common.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/datamov_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/detail/color_detail.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/detail/reduce.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/detail/reduce_key_val.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/detail/transform_detail.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/detail/type_traits_detail.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/detail/vec_distance_detail.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/dynamic_smem.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/emulation.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/filters.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/funcattrib.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/functional.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/limits.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/reduce.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/saturate_cast.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/scan.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/simd_functions.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/transform.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/type_traits.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/utility.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/vec_distance.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/vec_math.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/vec_traits.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/warp.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/warp_reduce.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda/warp_shuffle.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda_stream_accessor.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cuda_types.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cvstd.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cvstd.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/cvstd_wrapper.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/detail/async_promise.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/detail/dispatch_helper.impl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/detail/exception_ptr.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/directx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/dualquaternion.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/dualquaternion.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/eigen.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/fast_math.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/hal.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_avx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_avx512.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_cpp.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_forward.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_lasx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_lsx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_math.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_msa.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_neon.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_rvv071.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_rvv_scalable.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_sse.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_sse_em.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_vsx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/intrin_wasm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/hal/simd_utils.impl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/mat.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/mat.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/matx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/matx.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/neon_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/ocl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/ocl_genbase.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/ocl_defs.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/opencl_info.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/opencl_svm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/autogenerated/opencl_clblas.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/autogenerated/opencl_clfft.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/autogenerated/opencl_core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/autogenerated/opencl_core_wrappers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/autogenerated/opencl_gl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/autogenerated/opencl_gl_wrappers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/opencl_clblas.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/opencl_clfft.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/opencl_core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/opencl_core_wrappers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/opencl_gl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/opencl_gl_wrappers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/opencl_svm_20.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/opencl_svm_definitions.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opencl/runtime/opencl_svm_hsa_extension.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/opengl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/operations.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/optim.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/ovx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/parallel/backend/parallel_for.openmp.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/parallel/backend/parallel_for.tbb.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/parallel/parallel_backend.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/persistence.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/quaternion.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/quaternion.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/saturate.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/simd_intrinsics.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/softfloat.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/sse_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/traits.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/types.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utility.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utils/allocator_stats.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utils/allocator_stats.impl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utils/filesystem.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utils/fp_control_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utils/instrumentation.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utils/logger.defines.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utils/logger.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utils/logtag.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utils/tls.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/utils/trace.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/va_intel.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/version.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core/vsx_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/core_detect.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/ar_hmdb.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/ar_sports.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/dataset.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/fr_adience.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/fr_lfw.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/gr_chalearn.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/gr_skig.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/hpe_humaneva.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/hpe_parse.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/ir_affine.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/ir_robot.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/is_bsds.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/is_weizmann.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/msm_epfl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/msm_middlebury.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/or_imagenet.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/or_mnist.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/or_pascal.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/or_sun.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/pd_caltech.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/pd_inria.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/slam_kitti.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/slam_tumindoor.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/sr_bsds.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/sr_div2k.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/sr_general100.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/tr_chars.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/tr_icdar.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/tr_svt.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/track_alov.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/track_vot.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/datasets/util.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn/all_layers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn/dict.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn/dnn.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn/dnn.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn/layer.details.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn/layer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn/shape_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn/utils/debug_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn/utils/inference_engine.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn/version.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dnn_superres.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/dpm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/face.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/face/bif.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/face/face_alignment.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/face/facemark.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/face/facemarkAAM.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/face/facemarkLBF.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/face/facemark_train.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/face/facerec.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/face/mace.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/face/predict_collector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/features2d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/features2d/features2d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/flann.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/flann_base.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/flann/miniflann.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/fuzzy.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/fuzzy/fuzzy_F0_math.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/fuzzy/fuzzy_F1_math.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/fuzzy/fuzzy_image.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/fuzzy/types.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/cpu/core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/cpu/gcpukernel.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/cpu/imgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/cpu/ot.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/cpu/stereo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/cpu/video.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/fluid/core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/fluid/gfluidbuffer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/fluid/gfluidkernel.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/fluid/imgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/garg.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/garray.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gasync_context.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gcall.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gcommon.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gcompiled.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gcompiled_async.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gcompoundkernel.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gcomputation.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gcomputation_async.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gframe.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gkernel.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gmat.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gmetaarg.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gopaque.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gproto.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gpu/core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gpu/ggpukernel.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gpu/imgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gscalar.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gstreaming.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gtransform.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gtype_traits.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/gtyped.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/imgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/infer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/infer/bindings_ie.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/infer/bindings_onnx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/infer/bindings_ov.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/infer/ie.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/infer/onnx.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/infer/ov.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/infer/parsers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/media.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/oak/infer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/oak/oak.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/ocl/core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/ocl/goclkernel.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/ocl/imgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/opencv_includes.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/operators.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/ot.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/own/assert.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/own/convert.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/own/cvdefs.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/own/exports.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/own/mat.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/own/saturate.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/own/scalar.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/own/types.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/plaidml/core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/plaidml/gplaidmlkernel.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/plaidml/plaidml.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/python/python.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/render.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/render/render.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/render/render_types.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/rmat.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/s11n.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/s11n/base.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/stereo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/cap.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/desync.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/format.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/gstreamer/gstreamerpipeline.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/gstreamer/gstreamersource.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/meta.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/onevpl/accel_types.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/onevpl/cfg_params.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/onevpl/data_provider_interface.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/onevpl/default.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/onevpl/device_selector_interface.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/onevpl/source.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/queue_source.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/source.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/streaming/sync.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/util/any.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/util/compiler_hints.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/util/copy_through_move.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/util/optional.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/util/throw.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/util/type_traits.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/util/util.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/util/variant.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/gapi/video.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/hfs.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/highgui.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/highgui/highgui.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/img_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/img_hash/average_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/img_hash/block_mean_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/img_hash/color_moment_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/img_hash/img_hash_base.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/img_hash/marr_hildreth_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/img_hash/phash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/img_hash/radial_variance_hash.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgcodecs.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgcodecs/imgcodecs.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgproc/bindings.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgproc/detail/gcgraph.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgproc/detail/legacy.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgproc/hal/hal.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgproc/imgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/imgproc/segmentation.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/intensity_transform.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/line_descriptor.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/line_descriptor/descriptor.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/mcc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/mcc/ccm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/mcc/checker_detector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/mcc/checker_model.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ml.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ml/ml.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ml/ml.inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/objdetect.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/objdetect/aruco_board.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/objdetect/aruco_detector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/objdetect/aruco_dictionary.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/objdetect/barcode.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/objdetect/charuco_detector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/objdetect/detection_based_tracker.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/objdetect/face.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/objdetect/graphical_code_detector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/objdetect/objdetect.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/opencv.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/opencv_modules.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/optflow.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/optflow/motempl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/optflow/pcaflow.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/optflow/rlofflow.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/optflow/sparse_matching_gpc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/phase_unwrapping.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/phase_unwrapping/histogramphaseunwrapping.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/phase_unwrapping/phase_unwrapping.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/photo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/photo/cuda.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/photo/photo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/plot.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/quality.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/quality/quality_utils.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/quality/qualitybase.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/quality/qualitybrisque.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/quality/qualitygmsd.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/quality/qualitymse.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/quality/qualitypsnr.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/quality/qualityssim.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rapid.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/map.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/mapaffine.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/mapper.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/mappergradaffine.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/mappergradeuclid.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/mappergradproj.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/mappergradshift.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/mappergradsimilar.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/mapperpyramid.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/mapprojec.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/reg/mapshift.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rgbd.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rgbd/colored_kinfu.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rgbd/depth.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rgbd/detail/pose_graph.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rgbd/dynafu.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rgbd/intrinsics.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rgbd/kinfu.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rgbd/large_kinfu.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rgbd/linemod.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/rgbd/volume.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/saliency.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/saliency/saliencyBaseClasses.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/saliency/saliencySpecializedClasses.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/shape.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/shape/emdL1.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/shape/hist_cost.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/shape/shape.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/shape/shape_distance.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/shape/shape_transformer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/signal.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/signal/signal_resample.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stereo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stereo/descriptor.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stereo/quasi_dense_stereo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stereo/stereo.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/autocalib.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/blenders.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/camera.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/exposure_compensate.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/matchers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/motion_estimators.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/seam_finders.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/timelapsers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/util.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/util_inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/warpers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/detail/warpers_inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/stitching/warpers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/structured_light.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/structured_light/graycodepattern.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/structured_light/sinusoidalpattern.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/structured_light/structured_light.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/superres.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/superres/optical_flow.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/surface_matching.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/surface_matching/icp.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/surface_matching/pose_3d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/surface_matching/ppf_helpers.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/surface_matching/ppf_match_3d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/surface_matching/t_hash_int.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/text.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/text/erfilter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/text/ocr.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/text/swt_text_detection.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/text/textDetector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/tracking.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/tracking/feature.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/tracking/kalman_filters.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/tracking/onlineBoosting.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/tracking/tldDataset.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/tracking/tracking.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/tracking/tracking_by_matching.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/tracking/tracking_internals.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/tracking/tracking_legacy.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/tracking/twist.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/video.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/video/background_segm.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/video/detail/tracking.detail.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/video/tracking.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/video/video.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videoio.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videoio/registry.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videoio/videoio.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/deblurring.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/fast_marching.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/fast_marching_inl.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/frame_source.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/global_motion.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/inpainting.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/log.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/motion_core.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/motion_stabilizing.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/optical_flow.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/outlier_rejection.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/ring_buffer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/stabilizer.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/videostab/wobble_suppression.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/wechat_qrcode.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/world.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xfeatures2d.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xfeatures2d/cuda.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xfeatures2d/nonfree.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/brightedges.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/color_match.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/deriche_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/disparity_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/edge_drawing.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/edge_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/edgeboxes.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/edgepreserving_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/estimated_covariance.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/fast_hough_transform.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/fast_line_detector.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/find_ellipses.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/fourier_descriptors.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/lsc.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/paillou_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/peilin.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/radon_transform.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/ridgefilter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/run_length_morphology.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/scansegment.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/seeds.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/segmentation.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/slic.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/sparse_match_interpolator.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/structured_edge_detection.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/ximgproc/weighted_median_filter.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xobjdetect.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xphoto.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xphoto/bm3d_image_denoising.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xphoto/dct_image_denoising.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xphoto/inpainting.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xphoto/oilpainting.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xphoto/tonemap.hpp",
+				"C:/Users/31593/Documents/hy/OpenCV_MingW-main/OpenCV4.11_mingw8.10/include/opencv2/xphoto/white_balance.hpp"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.hxx",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.java",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.js",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.jui",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.qml",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.qrc",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.qs",
+			"paths" : [],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/31593/Documents/hy/*.ui",
+			"paths" : 
+			[
+				"C:/Users/31593/Documents/hy/mainwindow.ui"
+			],
+			"recurse" : true
+		}
+	],
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/.qtcreator/cmake-helper/qtcreator-project.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/.qtcreator/cmake-helper/package-manager.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/CMakeFiles/3.30.5/CMakeSystem.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeRCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX-ABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6Config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtInstallPaths.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6Targets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtFeature.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtFeatureCommon.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicGitHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessAliasTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointMinGW32Target.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessAliasTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindVulkan.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindVulkan.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindVulkan.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindVulkan.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessAliasTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeParseArguments.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessAliasTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6Config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtInstallPaths.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6Targets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtFeature.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtFeatureCommon.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicGitHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/QT/6.8.3/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake"
+		},
+		{
+			"path" : "OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/OpenCVConfig-version.cmake"
+		},
+		{
+			"path" : "OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/OpenCVConfig.cmake"
+		},
+		{
+			"path" : "OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/x64/mingw/lib/OpenCVConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/x64/mingw/lib/OpenCVModules.cmake"
+		},
+		{
+			"path" : "OpenCV_MingW-main/OpenCV4.11_mingw13.1.0/x64/mingw/lib/OpenCVModules-release.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "C:/Users/31593/Documents/hy/build/Desktop_Qt_6_8_3_MinGW_64_bit_Debug",
+		"source" : "C:/Users/31593/Documents/hy"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}
