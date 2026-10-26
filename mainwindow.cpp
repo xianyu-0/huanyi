@@ -53,15 +53,93 @@
 #include <QPainter>
 #include <QScreen>
 #include <QBuffer>
-#include <QGraphicsDropShadowEffect>   // ★ 苹果风：画布卡片阴影
+#include <QGraphicsDropShadowEffect>
 
-// ==================== 苹果风状态条辅助函数 ====================
-// ★ 修改：圆角从 22px 改为 10px，padding 改为 10px 20px，不再是长条药丸
+// ==================== 苹果风全局静态辅助函数 ====================
+
+// 统一的状态栏样式
 static inline QString appleStatusStyle(const QString &color = "#1D1D1F") {
     return QStringLiteral(
                "QLabel { background-color: rgba(255,255,255,0.92); color: %1; "
                "font-size: 14px; font-weight: 500; border-radius: 10px; "
                "padding: 10px 20px; border: 1px solid rgba(0,0,0,0.06); }").arg(color);
+}
+
+// ★ 核心修复：统一的苹果风消息提示框封装 (动态响应按钮数量，避免文字截断)
+static int showAppleMsgBox(QWidget *parent, const QString &title, const QString &text,
+                           const QStringList &buttons, bool isDanger = false) {
+    QDialog dlg(parent);
+    dlg.setWindowTitle(title);
+    dlg.setWindowFlags(dlg.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    int btnCount = buttons.size();
+    // 如果按钮 >= 3 个，高度自动撑开，给纵向排列留出空间
+    dlg.setFixedSize(380, btnCount >= 3 ? 240 + (btnCount - 2) * 55 : 240);
+    dlg.setStyleSheet("QDialog { background-color: #FFFFFF; border-radius: 16px; }");
+
+    QVBoxLayout *layout = new QVBoxLayout(&dlg);
+    layout->setContentsMargins(24, 30, 24, 24);
+    layout->setSpacing(12);
+
+    QLabel *titleLabel = new QLabel(title, &dlg);
+    titleLabel->setAlignment(Qt::AlignCenter);
+    titleLabel->setStyleSheet("font-size: 18px; font-weight: 600; color: #1D1D1F;");
+
+    QLabel *textLabel = new QLabel(text, &dlg);
+    textLabel->setAlignment(Qt::AlignCenter);
+    textLabel->setWordWrap(true);
+    textLabel->setStyleSheet("font-size: 14px; color: #86868B; line-height: 1.5;");
+
+    layout->addWidget(titleLabel);
+    layout->addWidget(textLabel);
+    layout->addStretch();
+
+    int result = -1;
+
+    // ★ 修复：如果按钮数量 >= 3 个，改为纵向排布，彻底防止文字截断
+    if (btnCount >= 3) {
+        QVBoxLayout *btnLayout = new QVBoxLayout();
+        btnLayout->setSpacing(10);
+        for (int i = 0; i < btnCount; ++i) {
+            QPushButton *btn = new QPushButton(buttons[i], &dlg);
+            btn->setMinimumHeight(44);
+            btn->setCursor(Qt::PointingHandCursor);
+
+            if (isDanger && i == 0) {
+                btn->setStyleSheet("QPushButton { background-color: #FF3B30; color: white; border-radius: 22px; font-size: 15px; font-weight: 600; border: none; } QPushButton:hover { background-color: #D70015; }");
+            } else if (i == 0) {
+                btn->setStyleSheet("QPushButton { background-color: #5856D6; color: white; border-radius: 22px; font-size: 15px; font-weight: 600; border: none; } QPushButton:hover { background-color: #4B49C4; }");
+            } else {
+                btn->setStyleSheet("QPushButton { background-color: #F5F5F7; color: #1D1D1F; border-radius: 22px; font-size: 15px; font-weight: 500; border: none; } QPushButton:hover { background-color: #E5E5EA; }");
+            }
+            QObject::connect(btn, &QPushButton::clicked, &dlg, [&dlg, &result, i]() { result = i; dlg.accept(); });
+            btnLayout->addWidget(btn);
+        }
+        layout->addLayout(btnLayout);
+    } else {
+        // 只有 1~2 个按钮时，保持横向排布
+        QHBoxLayout *btnLayout = new QHBoxLayout();
+        btnLayout->setSpacing(12);
+        for (int i = 0; i < btnCount; ++i) {
+            QPushButton *btn = new QPushButton(buttons[i], &dlg);
+            btn->setMinimumHeight(44);
+            btn->setCursor(Qt::PointingHandCursor);
+
+            if (isDanger && i == 0) {
+                btn->setStyleSheet("QPushButton { background-color: #FF3B30; color: white; border-radius: 22px; font-size: 15px; font-weight: 600; border: none; } QPushButton:hover { background-color: #D70015; }");
+            } else if (i == 0) {
+                btn->setStyleSheet("QPushButton { background-color: #5856D6; color: white; border-radius: 22px; font-size: 15px; font-weight: 600; border: none; } QPushButton:hover { background-color: #4B49C4; }");
+            } else {
+                btn->setStyleSheet("QPushButton { background-color: #F5F5F7; color: #1D1D1F; border-radius: 22px; font-size: 15px; font-weight: 500; border: none; } QPushButton:hover { background-color: #E5E5EA; }");
+            }
+            QObject::connect(btn, &QPushButton::clicked, &dlg, [&dlg, &result, i]() { result = i; dlg.accept(); });
+            btnLayout->addWidget(btn);
+        }
+        layout->addLayout(btnLayout);
+    }
+
+    dlg.exec();
+    return result;
 }
 
 // ==================== 工具函数 ====================
@@ -85,6 +163,7 @@ MainWindow::MainWindow(UserRole role, QWidget *parent)
         this->setStyleSheet(qss);
         qssFile.close();
     }
+
     QString msgBoxStyle = R"(
         QMessageBox { background-color: #FFFFFF; border-radius: 16px; }
         QMessageBox QLabel { font-size: 14px; color: #1D1D1F; min-width: 260px; }
@@ -94,6 +173,11 @@ MainWindow::MainWindow(UserRole role, QWidget *parent)
         }
         QMessageBox QPushButton:hover   { background-color: #4B49C4; }
         QMessageBox QPushButton:pressed { background-color: #3F3DAF; }
+
+        QInputDialog { background-color: #FFFFFF; }
+        QInputDialog QLabel { color: #1D1D1F; font-size: 14px; }
+        QInputDialog QLineEdit { border: 1px solid #C7C7CC; border-radius: 8px; padding: 6px; background: #F5F5F7; color: #1D1D1F; }
+        QInputDialog QPushButton { min-width: 100px; border-radius: 17px; padding: 6px; background: #5856D6; color: white; }
     )";
     qApp->setStyleSheet(qApp->styleSheet() + msgBoxStyle);
     QIcon icon("C:/Users/31593/Documents/hy/images/app_icon.png");
@@ -166,7 +250,6 @@ void MainWindow::setupLayout()
     rootLayout->setContentsMargins(0, 0, 0, 0);
     rootLayout->setSpacing(0);
 
-    // ==================== 左侧导航（半透明白 220px） ====================
     QWidget *sidebar = new QWidget(central);
     sidebar->setObjectName("sidebar");
     sidebar->setFixedWidth(220);
@@ -175,39 +258,28 @@ void MainWindow::setupLayout()
         "border-right: 1px solid rgba(0,0,0,0.06); }");
 
     QVBoxLayout *sidebarLayout = new QVBoxLayout(sidebar);
-    sidebarLayout->setContentsMargins(16, 32, 16, 24);
+    sidebarLayout->setContentsMargins(16, 24, 16, 24);
     sidebarLayout->setSpacing(4);
 
-    // Logo
     QLabel *logoLabel = new QLabel(
         m_currentRole == Role_Seller ? "💼 幻衣" : "👗 幻衣", sidebar);
-    logoLabel->setAlignment(Qt::AlignCenter);
+    logoLabel->setAlignment(Qt::AlignLeft);
     logoLabel->setStyleSheet(
-        "color: #1D1D1F; font-size: 20px; font-weight: 600; "
-        "letter-spacing: 0.5px; padding: 8px 0;");
+        "color: #1D1D1F; font-size: 22px; font-weight: 800; "
+        "letter-spacing: 0.5px; padding: 0 0 20px 12px;");
     sidebarLayout->addWidget(logoLabel);
 
-    // 角色小标签
-    QLabel *roleLabel = new QLabel(
-        m_currentRole == Role_Seller ? "商家模式" : "买家模式", sidebar);
-    roleLabel->setAlignment(Qt::AlignCenter);
-    roleLabel->setStyleSheet(
-        "color: #86868B; font-size: 11px; letter-spacing: 1px; "
-        "padding: 2px; margin-bottom: 24px;");
-    sidebarLayout->addWidget(roleLabel);
-
-    // 导航样式
     QString navStyle =
-        "QPushButton { text-align: left; padding-left: 14px; "
+        "QPushButton { text-align: left; padding-left: 12px; "
         "background-color: transparent; color: #1D1D1F; "
         "font-size: 14px; font-weight: 500; border: none; "
-        "border-radius: 10px; } "
+        "border-radius: 10px; height: 40px; } "
         "QPushButton:hover { background-color: rgba(0,0,0,0.04); }";
     QString navActiveStyle =
-        "QPushButton { text-align: left; padding-left: 11px; "
+        "QPushButton { text-align: left; padding-left: 9px; "
         "background-color: rgba(88,86,214,0.10); color: #5856D6; "
         "font-size: 14px; font-weight: 600; border: none; "
-        "border-left: 3px solid #5856D6; border-radius: 10px; }";
+        "border-left: 3px solid #5856D6; border-radius: 10px; height: 40px; }";
 
     if (m_currentRole == Role_Seller) {
         QPushButton *navManage = new QPushButton("📦   商品管理", sidebar);
@@ -242,7 +314,6 @@ void MainWindow::setupLayout()
 
     sidebarLayout->addStretch();
 
-    // 底部停止按钮（纯红字，无底色）
     QPushButton *navStop = new QPushButton("⏹   停止当前任务", sidebar);
     navStop->setMinimumHeight(36);
     navStop->setStyleSheet(
@@ -271,7 +342,6 @@ void MainWindow::setupLayout()
 
     rootLayout->addWidget(sidebar);
 
-    // ==================== 右侧沉浸工作区 ====================
     QWidget *mainContent = new QWidget(central);
     mainContent->setObjectName("mainContent");
     mainContent->setStyleSheet("#mainContent { background-color: #F5F5F7; }");
@@ -280,14 +350,12 @@ void MainWindow::setupLayout()
     mainLayout->setContentsMargins(32, 28, 32, 28);
     mainLayout->setSpacing(18);
 
-    // 状态条（白底，圆角 10px）
     lblStatus = new QLabel(mainContent);
     lblStatus->setAlignment(Qt::AlignCenter);
     lblStatus->setMinimumHeight(44);
     lblStatus->setStyleSheet(appleStatusStyle("#5856D6"));
     mainLayout->addWidget(lblStatus);
 
-    // 画布（白卡 20px 圆角 + 极柔阴影）
     lblImage = new QLabel(mainContent);
     lblImage->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     lblImage->setAlignment(Qt::AlignCenter);
@@ -301,7 +369,6 @@ void MainWindow::setupLayout()
     lblImage->setGraphicsEffect(cardShadow);
     mainLayout->addWidget(lblImage, 1);
 
-    // 历史接管行（默认隐藏）
     btnBackToHistory = new QPushButton("← 返回列表", mainContent);
     btnUseHistoryImg = new QPushButton("用此图试穿 →", mainContent);
     btnBackToHistory->setMinimumHeight(48);
@@ -328,7 +395,6 @@ void MainWindow::setupLayout()
     connect(btnBackToHistory, &QPushButton::clicked, this, &MainWindow::onBackToHistoryClicked);
     connect(btnUseHistoryImg, &QPushButton::clicked, this, &MainWindow::onUseHistoryImageClicked);
 
-    // 对比按钮（白底胶囊）
     btnShowCompare = new QPushButton("查看试穿对比", mainContent);
     btnShowCompare->setMinimumHeight(48);
     btnShowCompare->setStyleSheet(
@@ -340,7 +406,6 @@ void MainWindow::setupLayout()
     connect(btnShowCompare, &QPushButton::clicked, this, &MainWindow::showComparisonDialog);
     mainLayout->addWidget(btnShowCompare);
 
-    // 主操作按钮（苹果紫胶囊）
     btnSmartAction = new QPushButton("开始试穿", mainContent);
     btnSmartAction->setMinimumHeight(52);
     btnSmartAction->setStyleSheet(
@@ -352,12 +417,10 @@ void MainWindow::setupLayout()
     connect(btnSmartAction, &QPushButton::clicked, this, &MainWindow::onSmartActionClicked);
     mainLayout->addWidget(btnSmartAction);
 
-    // 兼容占位：btnWardrobe（功能已移入侧栏，保留指针防旧调用崩溃）
     btnWardrobe = new QPushButton("👕 我的衣服库", mainContent);
     btnWardrobe->setVisible(false);
     mainLayout->addWidget(btnWardrobe);
 
-    // 兼容占位：bottomSubRowWidget（高度 0，零视觉影响）
     bottomSubRowWidget = new QWidget(mainContent);
     bottomSubRowWidget->setFixedHeight(0);
     bottomSubRowWidget->setVisible(false);
@@ -365,7 +428,6 @@ void MainWindow::setupLayout()
 
     rootLayout->addWidget(mainContent, 1);
 
-    // ==================== 窗口尺寸 ====================
     this->setWindowTitle(
         m_currentRole == Role_Seller ? "幻衣 - 商家管理端" : "幻衣 - AI 虚拟试穿系统");
     this->resize(1280, 800);
@@ -378,28 +440,38 @@ void MainWindow::setupLayout()
 void MainWindow::setupMenuBar()
 {
     QMenuBar *menuBar = this->menuBar();
-    QMenu *fileMenu = menuBar->addMenu("文件(&F)");
+    menuBar->setStyleSheet(
+        "QMenuBar { background-color: transparent; padding: 4px 8px; border: none; font-family: 'Microsoft YaHei', 'PingFang SC'; } "
+        "QMenuBar::item { background: transparent; padding: 6px 14px; border-radius: 6px; color: #86868B; font-size: 13px; font-weight: 500; } "
+        "QMenuBar::item:selected { background: rgba(0,0,0,0.06); color: #1D1D1F; } "
+        "QMenu { background-color: #FFFFFF; border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 6px; } "
+        "QMenu::item { background: transparent; padding: 8px 24px; border-radius: 6px; color: #1D1D1F; font-size: 13px; } "
+        "QMenu::item:selected { background-color: #5856D6; color: #FFFFFF; } "
+        "QMenu::separator { height: 1px; background: rgba(0,0,0,0.06); margin: 4px 8px; } "
+        );
+
+    QMenu *fileMenu = menuBar->addMenu("文件");
     QAction *actSave = fileMenu->addAction("💾 保存结果图");
     connect(actSave, &QAction::triggered, this, &MainWindow::on_btnSaveResult_clicked);
     fileMenu->addSeparator();
-    QAction *actExit = fileMenu->addAction("🚪 退出");
+    QAction *actExit = fileMenu->addAction("🚪 退出系统");
     connect(actExit, &QAction::triggered, this, &QWidget::close);
-    QMenu *comfyMenu = menuBar->addMenu("ComfyUI");
-    QAction *actStart = comfyMenu->addAction("▶️ 启动 ComfyUI");
-    connect(actStart, &QAction::triggered, this, &MainWindow::onStartComfyUI);
-    QAction *actStop = comfyMenu->addAction("⏹ 停止 ComfyUI");
-    connect(actStop, &QAction::triggered, this, &MainWindow::onStopComfyUI);
-    QAction *actCheck = comfyMenu->addAction("🔍 检查状态");
-    connect(actCheck, &QAction::triggered, this, &MainWindow::onCheckComfyUI);
-    QMenu *toolMenu = menuBar->addMenu("工具(&T)");
-    QAction *actWardrobe = toolMenu->addAction("👕 我的衣服库");
-    connect(actWardrobe, &QAction::triggered, this, &MainWindow::openWardrobeManager);
-    QMenu *helpMenu = menuBar->addMenu("帮助(&H)");
 
-    QAction *actAbout = helpMenu->addAction("ℹ️ 关于");
+    QMenu *comfyMenu = menuBar->addMenu("引擎");
+    QAction *actStart = comfyMenu->addAction("▶️ 启动引擎");
+    connect(actStart, &QAction::triggered, this, &MainWindow::onStartComfyUI);
+    QAction *actStop = comfyMenu->addAction("⏹ 停止引擎");
+    connect(actStop, &QAction::triggered, this, &MainWindow::onStopComfyUI);
+    comfyMenu->addSeparator();
+    QAction *actCheck = comfyMenu->addAction("🔍 检查运行状态");
+    connect(actCheck, &QAction::triggered, this, &MainWindow::onCheckComfyUI);
+
+    QMenu *helpMenu = menuBar->addMenu("帮助");
+    QAction *actAbout = helpMenu->addAction("ℹ️ 关于幻衣");
     connect(actAbout, &QAction::triggered, this, [=]() {
         QDialog dlg(this);
         dlg.setWindowTitle("关于幻衣");
+        dlg.setWindowFlags(dlg.windowFlags() & ~Qt::WindowContextHelpButtonHint);
         dlg.setFixedSize(420, 260);
         dlg.setStyleSheet("QDialog { background-color: #FFFFFF; }");
 
@@ -417,7 +489,7 @@ void MainWindow::setupMenuBar()
 
         QPushButton *btnOk = new QPushButton("确定", &dlg);
         btnOk->setFixedSize(120, 42);
-        btnOk->setStyleSheet("QPushButton { background-color: #5856D6; color: white; border-radius: 21px; font-size: 15px; font-weight: 600; } QPushButton:hover { background-color: #4B49C4; }");
+        btnOk->setStyleSheet("QPushButton { background-color: #5856D6; color: white; border-radius: 21px; font-size: 15px; font-weight: 600; border: none; } QPushButton:hover { background-color: #4B49C4; }");
         connect(btnOk, &QPushButton::clicked, &dlg, &QDialog::accept);
 
         layout->addWidget(titleLabel);
@@ -481,20 +553,89 @@ void MainWindow::showCenterLoading(const QString &title, const QString &subtitle
     lblImage->setText(html); lblImage->repaint(); QApplication::processEvents();
 }
 
+// ★ 彻底修复排版：放弃 HTML 渲染，使用 QPainter 原生绘制，纯白背景+全局抗锯齿，彻底杜绝发虚
 void MainWindow::updateCenterProgress(int percent, const QString &msg) {
-    QString html = QString(R"(
-        <div style='text-align: center; margin-top: 90px; font-family: "PingFang SC", "Microsoft YaHei", sans-serif;'>
-            <h2 style='color: #1D1D1F; font-size: 22px; font-weight: 600; margin-bottom: 24px;'>%1</h2>
-            <table width='460' align='center' style='background-color: rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;'>
-                <tr><td>
-                    <div style='width: %2%; height: 8px; background: #5856D6; border-radius: 8px;'></div>
-                </td></tr>
-            </table>
-            <h3 style='color: #5856D6; font-size: 32px; font-weight: 700; margin-top: 18px;'>%2<span style='font-size: 18px; color: #86868B;'>%</span></h3>
-            <p style='color: #AEAEB2; font-size: 13px; margin-top: 10px;'>请稍候，AI 正在全力以赴为您创作...</p>
-        </div>
-    )").arg(msg).arg(percent);
-    lblImage->setText(html); lblImage->repaint();
+    int p = qBound(0, percent, 100);
+
+    QSize size = lblImage->size();
+    if (size.width() <= 0 || size.height() <= 0) return;
+
+    // 1. 使用纯白背景代替透明，杜绝与底层阴影/圆角叠加导致的模糊
+    QPixmap pixmap(size);
+    pixmap.fill(Qt::white);
+
+    QPainter painter(&pixmap);
+    // 2. 开启高质量的抗锯齿
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::TextAntialiasing, true);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform, true);
+
+    int cx = size.width() / 2;
+    int cy = size.height() / 2 - 20;
+    int radius = 80;
+
+    // 3. 底部浅灰圆环背景
+    QPen bgPen(QColor("#F0F0F5"), 14, Qt::SolidLine, Qt::RoundCap);
+    painter.setPen(bgPen);
+    painter.drawEllipse(QPoint(cx, cy), radius, radius);
+
+    // 4. 紫色进度圆环
+    QRectF rect(cx - radius, cy - radius, radius * 2, radius * 2);
+
+    // 动态呼吸灯颜色
+    qint64 time = QDateTime::currentMSecsSinceEpoch();
+    bool flash = (time / 600) % 2 == 0;
+    QColor progressColor = flash ? QColor("#7A78E0") : QColor("#5856D6");
+
+    QPen progressPen(progressColor, 14, Qt::SolidLine, Qt::RoundCap);
+    painter.setPen(progressPen);
+
+    int spanAngle = - (p * 360 * 16) / 100;
+    painter.drawArc(rect, 90 * 16, spanAngle);
+
+    // 5. 绘制中央的高清数字
+    QFont font = painter.font();
+    font.setFamily("Arial"); // Arial 渲染数字最清晰
+    font.setPixelSize(60);
+    font.setBold(true);
+    painter.setFont(font);
+    painter.setPen(QColor("#1D1D1F"));
+
+    QString percentStr = QString::number(p);
+    QFontMetrics fm(font);
+    int textW = fm.horizontalAdvance(percentStr);
+    int textH = fm.height();
+
+    // 精确居中对齐，避免手动算偏
+    QRect textRect(cx - textW / 2 - 10, cy - textH / 2 - 8, textW, textH);
+    painter.drawText(textRect, Qt::AlignRight | Qt::AlignVCenter, percentStr);
+
+    // 绘制 % 符号
+    font.setPixelSize(22);
+    font.setBold(false);
+    font.setFamily("Microsoft YaHei");
+    painter.setFont(font);
+    painter.setPen(QColor("#86868B"));
+    QRect perRect(cx + textW / 2 - 10, cy - textH / 2 - 8, 40, textH);
+    painter.drawText(perRect, Qt::AlignLeft | Qt::AlignVCenter, "%");
+
+    // 6. 绘制底部文字
+    font.setPixelSize(20);
+    font.setBold(true);
+    font.setFamily("Microsoft YaHei");
+    painter.setFont(font);
+    painter.setPen(QColor("#1D1D1F"));
+    painter.drawText(0, cy + radius + 50, size.width(), 30, Qt::AlignHCenter, msg);
+
+    font.setPixelSize(13);
+    font.setBold(false);
+    painter.setFont(font);
+    painter.setPen(QColor("#AEAEB2"));
+    painter.drawText(0, cy + radius + 80, size.width(), 30, Qt::AlignHCenter, "请稍候，AI 正在全力以赴为您创作...");
+
+    painter.end();
+
+    lblImage->setPixmap(pixmap);
 }
 
 void MainWindow::updateProgressUI() {
@@ -531,12 +672,11 @@ void MainWindow::updateProgressUI() {
 void MainWindow::updateSmartUI() {
     if (!btnSmartAction || !lblStatus || m_isViewingHistoryImage) return;
 
-    // ★ 新增：如果是卖家模式，且处于空闲状态，显示对应的提示
     if (m_currentRole == Role_Seller && currentStage == 0) {
         btnShowCompare->setVisible(false);
         lblStatus->setText("💡 商家模式：请在左侧导航进入【商品管理】");
         lblStatus->setStyleSheet(appleStatusStyle("#5856D6"));
-        return; // 直接返回，跳过下面的买家逻辑
+        return;
     }
 
     switch (currentStage) {
@@ -561,7 +701,7 @@ void MainWindow::updateSmartUI() {
 // ==================== 主流程交互 ====================
 void MainWindow::onSmartActionClicked() {
     if (m_currentRole == Role_Seller) {
-        QMessageBox::information(this, "提示", "您当前处于商家模式，请使用左侧【商品管理】管理衣物。");
+        showAppleMsgBox(this, "提示", "您当前处于商家模式，请使用左侧【商品管理】管理衣物。", {"知道了"});
         return;
     }
 
@@ -572,12 +712,62 @@ void MainWindow::onSmartActionClicked() {
         return;
     }
     if (currentStage == 3) return;
-    QDialog dlg(this); dlg.setWindowTitle("开始试穿"); dlg.setFixedSize(360, 320); dlg.setStyleSheet("QDialog { background-color: #FFFFFF; }");
+
+    // ★ 新增：检测是否已经有人物和遮罩，支持直接挑衣服
+    if (!currentBodyPath.isEmpty() && QFile::exists(currentBodyPath) &&
+        !currentMaskPath.isEmpty() && QFile::exists(currentMaskPath)) {
+
+        QDialog reuseDlg(this);
+        reuseDlg.setWindowTitle("继续试穿");
+        reuseDlg.setWindowFlags(reuseDlg.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+        reuseDlg.setFixedSize(360, 300);
+        reuseDlg.setStyleSheet("QDialog { background-color: #FFFFFF; }");
+
+        QVBoxLayout *rLayout = new QVBoxLayout(&reuseDlg);
+        QLabel *rIcon = new QLabel("✨", &reuseDlg); rIcon->setAlignment(Qt::AlignCenter); rIcon->setStyleSheet("font-size: 48px; margin-top: 10px;");
+        QLabel *rLabel = new QLabel("已保留上次的人物与遮罩\n是否继续使用该人物？", &reuseDlg);
+        rLabel->setAlignment(Qt::AlignCenter); rLabel->setWordWrap(true);
+        rLabel->setStyleSheet("font-size: 15px; font-weight: 600; margin-bottom: 15px; color: #1D1D1F; line-height: 1.4;");
+
+        QPushButton *btnReuse = new QPushButton("👕 直接挑衣服", &reuseDlg);
+        btnReuse->setMinimumHeight(46);
+        btnReuse->setStyleSheet("QPushButton { background-color: #5856D6; color: white; border-radius: 23px; font-size: 15px; font-weight: 600; border: none;} QPushButton:hover { background-color: #4B49C4; }");
+
+        QPushButton *btnReset = new QPushButton("📸 重新拍/选人物", &reuseDlg);
+        btnReset->setMinimumHeight(46);
+        btnReset->setStyleSheet("QPushButton { background-color: #F5F5F7; color: #1D1D1F; border-radius: 23px; font-size: 15px; font-weight: 600; border: none;} QPushButton:hover { background-color: #E5E5EA; }");
+
+        QPushButton *btnCancel = new QPushButton("取消", &reuseDlg);
+        btnCancel->setMinimumHeight(40);
+        btnCancel->setStyleSheet("QPushButton { background-color: transparent; color: #86868B; border: none; font-size: 14px; }");
+
+        rLayout->addWidget(rIcon); rLayout->addWidget(rLabel); rLayout->addWidget(btnReuse); rLayout->addWidget(btnReset); rLayout->addWidget(btnCancel);
+
+        int choice = 0;
+        connect(btnReuse, &QPushButton::clicked, [&](){ choice = 1; reuseDlg.accept(); });
+        connect(btnReset, &QPushButton::clicked, [&](){ choice = 2; reuseDlg.accept(); });
+        connect(btnCancel, &QPushButton::clicked, &reuseDlg, &QDialog::reject);
+
+        reuseDlg.exec();
+        if (reuseDlg.result() != QDialog::Accepted) return;
+
+        if (choice == 1) {
+            QPixmap pix(currentBodyPath);
+            if (!pix.isNull()) lblImage->setPixmap(pix.scaled(lblImage->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+            doAfterMaskReady();
+            return;
+        }
+    }
+
+    // ----------- 正常选人物流程 -----------
+    QDialog dlg(this); dlg.setWindowTitle("开始试穿");
+    dlg.setWindowFlags(dlg.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    dlg.setFixedSize(360, 320); dlg.setStyleSheet("QDialog { background-color: #FFFFFF; }");
     QVBoxLayout *layout = new QVBoxLayout(&dlg);
     QLabel *iconLabel = new QLabel("📸", &dlg); iconLabel->setAlignment(Qt::AlignCenter); iconLabel->setStyleSheet("font-size: 48px; margin-top: 10px;");
     QLabel *textLabel = new QLabel("请选择人物图片来源", &dlg); textLabel->setAlignment(Qt::AlignCenter); textLabel->setStyleSheet("font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #1D1D1F;");
-    QPushButton *btnCapture = new QPushButton("📷 实时抓拍", &dlg); btnCapture->setMinimumHeight(46); btnCapture->setStyleSheet("QPushButton { background-color: #5856D6; color: white; border-radius: 23px; font-size: 15px; font-weight: 600; } QPushButton:hover { background-color: #4B49C4; }");
-    QPushButton *btnDefault = new QPushButton("🖼 使用默认图", &dlg); btnDefault->setMinimumHeight(46); btnDefault->setStyleSheet("QPushButton { background-color: #F5F5F7; color: #1D1D1F; border-radius: 23px; font-size: 15px; font-weight: 600; } QPushButton:hover { background-color: #E5E5EA; }");
+    QPushButton *btnCapture = new QPushButton("📷 实时抓拍", &dlg); btnCapture->setMinimumHeight(46); btnCapture->setStyleSheet("QPushButton { background-color: #5856D6; color: white; border-radius: 23px; font-size: 15px; font-weight: 600; border: none; } QPushButton:hover { background-color: #4B49C4; }");
+    QPushButton *btnDefault = new QPushButton("🖼 使用默认图", &dlg); btnDefault->setMinimumHeight(46); btnDefault->setStyleSheet("QPushButton { background-color: #F5F5F7; color: #1D1D1F; border-radius: 23px; font-size: 15px; font-weight: 600; border: none; } QPushButton:hover { background-color: #E5E5EA; }");
     QPushButton *btnCancel = new QPushButton("取消", &dlg); btnCancel->setMinimumHeight(40); btnCancel->setStyleSheet("QPushButton { background-color: transparent; color: #86868B; border: none; font-size: 14px; }");
     layout->addWidget(iconLabel); layout->addWidget(textLabel); layout->addWidget(btnCapture); layout->addWidget(btnDefault); layout->addWidget(btnCancel);
     int ret = 0;
@@ -586,8 +776,9 @@ void MainWindow::onSmartActionClicked() {
     connect(btnCancel, &QPushButton::clicked, &dlg, &QDialog::reject);
     dlg.exec();
     if (dlg.result() != QDialog::Accepted) return;
+
     if (ret == 1) {
-        cap.open(0); if (!cap.isOpened()) { QMessageBox::warning(this, "错误", "无法打开摄像头"); return; }
+        cap.open(0); if (!cap.isOpened()) { showAppleMsgBox(this, "错误", "无法打开摄像头，请检查设备是否被占用。", {"知道了"}); return; }
         cap.set(cv::CAP_PROP_FRAME_WIDTH, 640); cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480); timer->start(30);
         lblStatus->setText("💡 摄像头已开启，站好后再次点击【抓拍并继续】"); lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
         btnSmartAction->setText("📸 抓拍并继续");
@@ -601,26 +792,21 @@ void MainWindow::onSmartActionClicked() {
     }
     if (ret == 2) {
         QString defaultBody = "images/body.jpg";
-        if (!QFile::exists(defaultBody)) { QMessageBox::warning(this, "错误", "找不到默认人物图"); return; }
+        if (!QFile::exists(defaultBody)) { showAppleMsgBox(this, "错误", "找不到默认人物图 (images/body.jpg)", {"知道了"}); return; }
         currentBodyPath = defaultBody; QPixmap pix(defaultBody); if (!pix.isNull()) lblImage->setPixmap(pix.scaled(lblImage->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
         bool reuseMask = false;
         if (!lastMaskForReuse.isEmpty() && QFile::exists(lastMaskForReuse) && !lastBodyPathForMask.isEmpty()) {
-            QDialog askDlg(this); askDlg.setWindowTitle("复用上次遮罩"); askDlg.setFixedSize(320, 180);
-            QVBoxLayout *aLayout = new QVBoxLayout(&askDlg);
-            QLabel *aLbl = new QLabel("检测到上次已画过遮罩，是否直接复用？", &askDlg); aLbl->setAlignment(Qt::AlignCenter); aLbl->setWordWrap(true); aLbl->setStyleSheet("font-size: 15px; color: #1D1D1F; font-weight: 600; margin: 10px;");
-            QHBoxLayout *btnLayout = new QHBoxLayout();
-            QPushButton *btnYes = new QPushButton("复用", &askDlg); btnYes->setStyleSheet("background-color: #5856D6; color: white; border-radius: 19px; padding: 8px 20px; font-weight: 600;");
-            QPushButton *btnNo = new QPushButton("重新画", &askDlg); btnNo->setStyleSheet("background-color: #F5F5F7; color: #1D1D1F; border-radius: 19px; padding: 8px 20px; font-weight: 600;");
-            btnLayout->addWidget(btnNo); btnLayout->addWidget(btnYes); aLayout->addWidget(aLbl); aLayout->addLayout(btnLayout);
-            connect(btnYes, &QPushButton::clicked, &askDlg, &QDialog::accept); connect(btnNo, &QPushButton::clicked, &askDlg, &QDialog::reject);
-            if (askDlg.exec() == QDialog::Accepted) { currentMaskPath = lastMaskForReuse; reuseMask = true; }
+            int choice = showAppleMsgBox(this, "复用上次遮罩", "检测到上次已画过遮罩，是否直接复用？", {"复用", "重新画"});
+            if (choice == 0) { currentMaskPath = lastMaskForReuse; reuseMask = true; }
         }
+
         if (!reuseMask) {
             lblStatus->setText("✏️ 第 1 步：涂抹需要替换的衣服区域"); lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
             QString ts = QDateTime::currentDateTime().toString("yyyyMMddhhmmss");
             MaskEditorDialog maskDlg(defaultBody, this);
             if (maskDlg.exec() != QDialog::Accepted) { updateSmartUI(); lblImage->setText("✅ 已取消涂抹"); return; }
-            cv::Mat mask = maskDlg.getMask(); if (mask.empty() || cv::countNonZero(mask) == 0) { QMessageBox::warning(this, "未涂抹", "没有涂抹任何区域"); updateSmartUI(); return; }
+            cv::Mat mask = maskDlg.getMask(); if (mask.empty() || cv::countNonZero(mask) == 0) { showAppleMsgBox(this, "提示", "您没有涂抹任何区域。", {"知道了"}); updateSmartUI(); return; }
             cv::Mat frame = cv::imread(defaultBody.toStdString()); cv::Mat rgba; cv::cvtColor(frame, rgba, cv::COLOR_BGR2BGRA);
             applyMaskToAlpha(rgba, mask); QString maskFile = QString("images/captured_mask_%1.png").arg(ts);
             cv::imwrite(maskFile.toStdString(), rgba); currentMaskPath = maskFile; lastBodyPathForMask = defaultBody; lastMaskForReuse = maskFile;
@@ -632,13 +818,14 @@ void MainWindow::onSmartActionClicked() {
 }
 
 void MainWindow::on_btnCapture_clicked() {
-    if (!cap.isOpened()) { QMessageBox::information(this, "提示", "请先点击【开始试穿】"); return; }
-    cv::Mat frame; cap >> frame; if (frame.empty()) { QMessageBox::warning(this, "错误", "抓取画面失败"); return; }
+    if (!cap.isOpened()) { showAppleMsgBox(this, "提示", "请先点击【开始试穿】", {"知道了"}); return; }
+    cv::Mat frame; cap >> frame; if (frame.empty()) { showAppleMsgBox(this, "错误", "抓取画面失败", {"知道了"}); return; }
     timer->stop(); cap.release();
     if (frame.cols > 512 || frame.rows > 512) { double scale = 512.0 / std::max(frame.cols, frame.rows); cv::resize(frame, frame, cv::Size(), scale, scale); }
     QString ts = QDateTime::currentDateTime().toString("yyyyMMddhhmmss");
     QString bodyFile = QString("images/captured_body_%1.jpg").arg(ts); cv::imwrite(bodyFile.toStdString(), frame);
     currentBodyPath = bodyFile; currentMaskPath = "";
+
     bool reuseMask = false;
     if (!lastMaskForReuse.isEmpty() && QFile::exists(lastMaskForReuse) && !lastBodyPathForMask.isEmpty() && QFile::exists(lastBodyPathForMask)) {
         cv::Mat oldBody = cv::imread(lastBodyPathForMask.toStdString()); cv::Mat newBody = cv::imread(bodyFile.toStdString());
@@ -646,16 +833,18 @@ void MainWindow::on_btnCapture_clicked() {
             if (oldBody.size() != newBody.size()) cv::resize(oldBody, oldBody, newBody.size());
             double sim = imageSimilarity(oldBody, newBody);
             if (sim > 0.65) {
-                if (QMessageBox::question(this, "复用上次遮罩？", QString("相似度 %1%，是否复用？").arg(int(sim*100)), QMessageBox::Yes|QMessageBox::No) == QMessageBox::Yes) {
-                    currentMaskPath = lastMaskForReuse; reuseMask = true;
-                }
+                QString msg = QString("相似度 %1%，是否复用上次遮罩？").arg(int(sim*100));
+                int choice = showAppleMsgBox(this, "复用上次遮罩", msg, {"复用", "重新画"});
+                if (choice == 0) { currentMaskPath = lastMaskForReuse; reuseMask = true; }
             }
         }
     }
+
     if (reuseMask) { doAfterMaskReady(); return; }
     lblStatus->setText("✏️ 第 1 步：涂抹需要替换的衣服区域"); lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
+
     MaskEditorDialog dlg(bodyFile, this); if (dlg.exec() != QDialog::Accepted) { updateSmartUI(); return; }
-    cv::Mat mask = dlg.getMask(); if (mask.empty() || cv::countNonZero(mask) == 0) { QMessageBox::warning(this, "未涂抹", "没有涂抹"); updateSmartUI(); return; }
+    cv::Mat mask = dlg.getMask(); if (mask.empty() || cv::countNonZero(mask) == 0) { showAppleMsgBox(this, "提示", "您没有涂抹任何区域。", {"知道了"}); updateSmartUI(); return; }
     cv::Mat rgba; cv::cvtColor(frame, rgba, cv::COLOR_BGR2BGRA); applyMaskToAlpha(rgba, mask);
     QString maskFile = QString("images/captured_mask_%1.png").arg(ts); cv::imwrite(maskFile.toStdString(), rgba);
     currentMaskPath = maskFile; lastBodyPathForMask = bodyFile; lastMaskForReuse = maskFile;
@@ -685,7 +874,7 @@ void MainWindow::openWardrobeManager() { WardrobeManagerDialog dlg(this); dlg.ex
 
 void MainWindow::doTryOnWithWardrobe() {
     WardrobePickerDialog picker(this); if (picker.exec() != QDialog::Accepted) { updateSmartUI(); lblImage->setText("✅ 已取消选择"); return; }
-    WardrobeItem item = picker.selectedItem(); if (item.id < 0 || !QFile::exists(item.imagePath)) { QMessageBox::warning(this, "错误", "衣服文件丢失"); return; }
+    WardrobeItem item = picker.selectedItem(); if (item.id < 0 || !QFile::exists(item.imagePath)) { showAppleMsgBox(this, "错误", "衣服文件丢失，可能被移动或删除。", {"知道了"}); return; }
     currentShirtPath = item.imagePath; lastGeneratedImagePath = ""; currentStage = 3; updateSmartUI();
     lblStatus->setText(QString("⏳ 第 3 步：正在准备试穿「%1」...").arg(item.name));
     lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
@@ -695,16 +884,18 @@ void MainWindow::doTryOnWithWardrobe() {
 void MainWindow::doTryOnWithLocalShirt() {
     QString filePath = QFileDialog::getOpenFileName(this, "选择服装图片", "C:/Users/31593/Documents/hy/images/", "图片文件 (*.png *.jpg *.jpeg *.bmp)");
     if (filePath.isEmpty()) { updateSmartUI(); lblImage->setText("✅ 已取消选择"); return; }
-    int ret = QMessageBox::question(this, "是否存入衣服库？", "临时试穿不保存图片，下次需重新找文件。\n是否将这张图存入衣服库，方便以后一键复用？", QMessageBox::Yes | QMessageBox::No);
-    if (ret == QMessageBox::Yes) {
+
+    int ret = showAppleMsgBox(this, "存入衣橱", "临时试穿不保存图片，下次需重新找文件。\n是否将这张图存入衣橱，方便以后一键复用？", {"存入衣橱", "直接试穿"});
+    if (ret == 0) {
         bool ok = false; QString name = QFileInfo(filePath).baseName();
-        QString input = QInputDialog::getText(this, "存入衣服库", "请输入衣服名称（默认取文件名）：", QLineEdit::Normal, name, &ok);
+        QString input = QInputDialog::getText(this, "存入衣橱", "请输入衣服名称（默认取文件名）：", QLineEdit::Normal, name, &ok);
         if (ok && !input.trimmed().isEmpty()) {
             QString autoCategory = detectCategoryFromPrompt(QFileInfo(filePath).baseName() + " " + input);
             int id = WardrobeManager::addItem(filePath, input.trimmed(), autoCategory);
             if (id > 0) { WardrobeItem it = WardrobeManager::getItemById(id); filePath = it.imagePath; }
         }
     }
+
     currentShirtPath = filePath; lastGeneratedImagePath = ""; currentStage = 3; updateSmartUI();
     lblStatus->setText("⏳ 第 3 步：正在使用本地图片准备试穿..."); lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
     ensureComfyUIRunning([=]() { freeComfyMemory(); doTryOn(currentBodyPath, currentMaskPath); });
@@ -713,22 +904,22 @@ void MainWindow::doTryOnWithLocalShirt() {
 // ==================== 网络请求 ====================
 void MainWindow::doTryOn(const QString &bodyPath, const QString &maskPath) {
     currentTaskType = 1;
-    if (bodyPath.isEmpty() || !QFile::exists(bodyPath)) { QMessageBox::warning(this, "错误", "找不到人物图"); return; }
-    if (maskPath.isEmpty() || !QFile::exists(maskPath)) { QMessageBox::warning(this, "错误", "找不到遮罩图"); return; }
+    if (bodyPath.isEmpty() || !QFile::exists(bodyPath)) { showAppleMsgBox(this, "错误", "找不到人物图", {"知道了"}); return; }
+    if (maskPath.isEmpty() || !QFile::exists(maskPath)) { showAppleMsgBox(this, "错误", "找不到遮罩图", {"知道了"}); return; }
     QString comfyInput = "D:/ComfyUI-aki/ComfyUI-aki-v3/ComfyUI/input/";
     auto forceCopy = [](const QString &src, const QString &dst) -> bool { QFile::remove(dst); return QFile::copy(src, dst); };
 
     QString protectedMask = protectFaceInMask(bodyPath, maskPath);
-    if (!forceCopy(bodyPath, comfyInput + "body.jpg")) { QMessageBox::warning(this, "错误", "无法复制人物"); return; }
+    if (!forceCopy(bodyPath, comfyInput + "body.jpg")) { showAppleMsgBox(this, "错误", "无法将人物图复制到 ComfyUI 输入目录，请检查权限。", {"知道了"}); return; }
 
-    if (!forceCopy(protectedMask, comfyInput + "body_mask.png")) { QMessageBox::warning(this, "错误", "无法复制遮罩"); return; }
+    if (!forceCopy(protectedMask, comfyInput + "body_mask.png")) { showAppleMsgBox(this, "错误", "无法将遮罩复制到 ComfyUI 输入目录。", {"知道了"}); return; }
 
     QString shirtSrc = !lastGeneratedImagePath.isEmpty() ? lastGeneratedImagePath : (currentShirtPath.isEmpty() ? QString("images/shirt.png") : currentShirtPath);
-    if (!QFile::exists(shirtSrc)) { QMessageBox::warning(this, "错误", "找不到服装图"); currentStage=0; updateSmartUI(); return; }
-    if (!forceCopy(shirtSrc, comfyInput + "shirt.png")) { QMessageBox::warning(this, "错误", "无法复制服装"); currentStage=0; updateSmartUI(); return; }
+    if (!QFile::exists(shirtSrc)) { showAppleMsgBox(this, "错误", "找不到服装图", {"知道了"}); currentStage=0; updateSmartUI(); return; }
+    if (!forceCopy(shirtSrc, comfyInput + "shirt.png")) { showAppleMsgBox(this, "错误", "无法将服装图复制到 ComfyUI 输入目录。", {"知道了"}); currentStage=0; updateSmartUI(); return; }
 
     QFile file("C:/Users/31593/Documents/hy/tryon_workflow_api.json");
-    if (!file.open(QIODevice::ReadOnly)) { QMessageBox::warning(this, "错误", "读不到 tryon_workflow_api.json"); currentStage=0; updateSmartUI(); return; }
+    if (!file.open(QIODevice::ReadOnly)) { showAppleMsgBox(this, "错误", "读不到 tryon_workflow_api.json", {"知道了"}); currentStage=0; updateSmartUI(); return; }
     QJsonObject root = QJsonDocument::fromJson(file.readAll()).object(); file.close();
 
     if (root.contains("19")) { QJsonObject n = root["19"].toObject(); QJsonObject i = n["inputs"].toObject(); i["image"] = "shirt.png"; n["inputs"] = i; root["19"] = n; }
@@ -774,7 +965,7 @@ void MainWindow::startGenerate(const QString &prompt) {
 
 QString MainWindow::buildWorkflowJson(const QString &prompt) {
     QFile file("C:/Users/31593/Documents/hy/workflow_api.json");
-    if (!file.open(QIODevice::ReadOnly)) { QMessageBox::warning(this, "错误", "读不到 workflow_api.json"); return ""; }
+    if (!file.open(QIODevice::ReadOnly)) { showAppleMsgBox(this, "错误", "读不到 workflow_api.json", {"知道了"}); return ""; }
     QJsonObject root = QJsonDocument::fromJson(file.readAll()).object(); file.close();
     if (root.contains("6")) {
         QJsonObject node6 = root["6"].toObject(); QJsonObject inputs6 = node6["inputs"].toObject();
@@ -876,27 +1067,23 @@ void MainWindow::downloadImage(const QString &filename, const QString &subfolder
                 lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
                 QApplication::processEvents();
 
-                QMessageBox box(this); box.setWindowTitle("AI 服装生成完成"); box.setText("对生成的衣服满意吗？"); box.setInformativeText("您可以存入衣服库方便以后复用，或直接试穿。");
-                QPushButton *btnTry = box.addButton("👕 直接试穿", QMessageBox::YesRole);
-                QPushButton *btnSave = box.addButton("💾 存入衣柜", QMessageBox::ActionRole);
-                QPushButton *btnRegen = box.addButton("🔄 重新生成", QMessageBox::NoRole);
-                QPushButton *btnCancel = box.addButton("❌ 取消", QMessageBox::RejectRole);
-                box.exec();
-                if (box.clickedButton() == btnTry) {
+                int choice = showAppleMsgBox(this, "生成完成", "对生成的衣服满意吗？\n您可以存入衣橱方便复用，或直接试穿。", {"直接试穿", "存入衣橱", "重新生成", "取消"});
+
+                if (choice == 0) {
                     pendingTryOnAfterGenerate = true; currentStage=0; updateSmartUI();
                     lblStatus->setText("✅ 点击【继续试穿】"); lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
-                } else if (box.clickedButton() == btnSave) {
+                } else if (choice == 1) {
                     QString autoCategory = detectCategoryFromPrompt(currentPromptForRegen);
                     bool ok = false;
-                    QString titleStr = QString("系统自动识别分类为：【%1】").arg(autoCategory);
-                    QString name = QInputDialog::getText(this, "存入衣服库", titleStr + "\n请输入衣服名称：", QLineEdit::Normal, currentPromptForRegen.left(10), &ok);
+                    QString titleStr = QString("系统自动识别分类为：【%1】\n请输入衣服名称：").arg(autoCategory);
+                    QString name = QInputDialog::getText(this, "存入衣橱", titleStr, QLineEdit::Normal, currentPromptForRegen.left(10), &ok);
                     if (ok && !name.trimmed().isEmpty()) {
                         int id = WardrobeManager::addItem(savePath, name.trimmed(), autoCategory);
                         if (id > 0) { WardrobeItem it = WardrobeManager::getItemById(id); currentShirtPath = it.imagePath; }
                     }
                     pendingTryOnAfterGenerate = true; currentStage=0; updateSmartUI();
                     lblStatus->setText("✅ 已存入库，点击【继续试穿】"); lblStatus->setStyleSheet(appleStatusStyle("#34C759"));
-                } else if (box.clickedButton() == btnRegen) {
+                } else if (choice == 2) {
                     bool ok = false; QString newPrompt = QInputDialog::getText(this, "重新生成", "描述词：", QLineEdit::Normal, currentPromptForRegen, &ok);
                     if (ok && !newPrompt.trimmed().isEmpty()) {
                         currentPromptForRegen = newPrompt; currentStage=3; updateSmartUI();
@@ -929,14 +1116,49 @@ QString MainWindow::protectFaceInMask(const QString &bodyPath, const QString &ma
     cv::Mat gray; cv::cvtColor(bodyMat, gray, cv::COLOR_BGR2GRAY); std::vector<cv::Rect> faces; faceCasc.detectMultiScale(gray, faces, 1.1, 4, 0, cv::Size(30, 30));
     if (faces.empty()) return maskPath;
     cv::Rect faceRect = faces[0]; for (const auto &f : faces) if (f.area() > faceRect.area()) faceRect = f;
-    int expandX = std::max((int)(faceRect.width * 0.6), 100); int expandYUp = std::max((int)(faceRect.height * 0.6), 100); int expandYDown = std::max((int)(faceRect.height * 0.8), 150);
-    int newX = std::max(0, faceRect.x - expandX); int newY = std::max(0, faceRect.y - expandYUp); int newW = faceRect.width + expandX * 2; int newH = faceRect.height + expandYUp + expandYDown;
-    if (newX + newW > bodyMat.cols) newW = bodyMat.cols - newX; if (newY + newH > bodyMat.rows) newH = bodyMat.rows - newY;
-    cv::Rect protectRect(newX, newY, newW, newH); if (maskRaw.size() != bodyMat.size()) cv::resize(maskRaw, maskRaw, bodyMat.size());
-    cv::Mat alpha; if (maskRaw.channels() == 4) { std::vector<cv::Mat> ch; cv::split(maskRaw, ch); alpha = ch[3].clone(); } else if (maskRaw.channels() == 3) { cv::Mat g; cv::cvtColor(maskRaw, g, cv::COLOR_BGR2GRAY); cv::bitwise_not(g, alpha); } else alpha = maskRaw.clone();
-    cv::rectangle(alpha, protectRect, cv::Scalar(255), cv::FILLED); cv::GaussianBlur(alpha, alpha, cv::Size(21, 21), 0);
-    cv::Mat out; cv::cvtColor(bodyMat, out, cv::COLOR_BGR2BGRA); std::vector<cv::Mat> outCh; cv::split(out, outCh); outCh[3] = alpha; cv::merge(outCh, out);
-    QString protectedPath = maskPath; protectedPath.replace(".png", "_faceprotected.png"); cv::imwrite(protectedPath.toStdString(), out); return protectedPath;
+
+    int expandX = static_cast<int>(faceRect.width * 0.3);
+    int expandYUp = static_cast<int>(faceRect.height * 0.3);
+    int expandYDown = static_cast<int>(faceRect.height * 0.5);
+
+    int newX = std::max(0, faceRect.x - expandX);
+    int newY = std::max(0, faceRect.y - expandYUp);
+    int newW = faceRect.width + expandX * 2;
+    int newH = faceRect.height + expandYUp + expandYDown;
+
+    if (newX + newW > bodyMat.cols) newW = bodyMat.cols - newX;
+    if (newY + newH > bodyMat.rows) newH = bodyMat.rows - newY;
+
+    cv::Rect protectRect(newX, newY, newW, newH);
+    if (maskRaw.size() != bodyMat.size()) cv::resize(maskRaw, maskRaw, bodyMat.size());
+
+    cv::Mat alpha;
+    if (maskRaw.channels() == 4) {
+        std::vector<cv::Mat> ch;
+        cv::split(maskRaw, ch);
+        alpha = ch[3].clone();
+    } else if (maskRaw.channels() == 3) {
+        cv::Mat g;
+        cv::cvtColor(maskRaw, g, cv::COLOR_BGR2GRAY);
+        cv::bitwise_not(g, alpha);
+    } else {
+        alpha = maskRaw.clone();
+    }
+
+    cv::rectangle(alpha, protectRect, cv::Scalar(255), cv::FILLED);
+    cv::GaussianBlur(alpha, alpha, cv::Size(3, 3), 0);
+
+    cv::Mat out;
+    cv::cvtColor(bodyMat, out, cv::COLOR_BGR2BGRA);
+    std::vector<cv::Mat> outCh;
+    cv::split(out, outCh);
+    outCh[3] = alpha;
+    cv::merge(outCh, out);
+
+    QString protectedPath = maskPath;
+    protectedPath.replace(".png", "_faceprotected.png");
+    cv::imwrite(protectedPath.toStdString(), out);
+    return protectedPath;
 }
 
 double MainWindow::imageSimilarity(const cv::Mat &a, const cv::Mat &b) {
@@ -1011,7 +1233,7 @@ void MainWindow::ensureComfyUIRunning(std::function<void()> callback) {
 // ==================== ComfyUI 手动控制（菜单） ====================
 void MainWindow::onStartComfyUI() {
     if (isComfyRunning()) {
-        QMessageBox::information(this, "ComfyUI", "ComfyUI 已在运行，服务正常。");
+        showAppleMsgBox(this, "ComfyUI", "ComfyUI 已在运行，服务正常。", {"知道了"});
         return;
     }
     currentStage = 2; engineWaitSeconds = 0; updateSmartUI();
@@ -1043,18 +1265,18 @@ void MainWindow::onStopComfyUI() {
         if (!comfyProcess->waitForFinished(3000)) comfyProcess->kill();
         comfyProcess->waitForFinished(1000);
         wsConnected = false;
-        QMessageBox::information(this, "ComfyUI", "ComfyUI 已停止。");
+        showAppleMsgBox(this, "ComfyUI", "ComfyUI 已停止。", {"知道了"});
     } else {
-        QMessageBox::information(this, "ComfyUI", "ComfyUI 当前未运行。");
+        showAppleMsgBox(this, "ComfyUI", "ComfyUI 当前未运行。", {"知道了"});
     }
     currentStage = 0; updateSmartUI();
 }
 
 void MainWindow::onCheckComfyUI() {
     if (isComfyRunning())
-        QMessageBox::information(this, "ComfyUI", "ComfyUI 正在运行，服务正常。");
+        showAppleMsgBox(this, "ComfyUI", "ComfyUI 正在运行，服务正常。", {"知道了"});
     else
-        QMessageBox::information(this, "ComfyUI", "ComfyUI 未运行。");
+        showAppleMsgBox(this, "ComfyUI", "ComfyUI 未运行。", {"知道了"});
 }
 
 // ==================== WebSocket ====================
@@ -1087,13 +1309,14 @@ void MainWindow::onWsTextMessage(const QString &msg) {
 // ==================== 历史记录与对比 ====================
 void MainWindow::on_btnHistory_clicked() {
     QDialog *dialog = new QDialog(this); dialog->setWindowTitle("📋 历史记录中心");
+    dialog->setWindowFlags(dialog->windowFlags() & ~Qt::WindowContextHelpButtonHint);
     QScreen *screen = QGuiApplication::primaryScreen(); QRect screenGeometry = screen->availableGeometry();
     int w = qMin(1100, screenGeometry.width() - 100); int h = qMin(750, screenGeometry.height() - 100);
     dialog->resize(w, h); dialog->setStyleSheet("QDialog { background-color: #F5F5F7; }");
     QVBoxLayout *mainLayout = new QVBoxLayout(dialog); mainLayout->setContentsMargins(20, 20, 20, 20); mainLayout->setSpacing(15);
     QHBoxLayout *topBar = new QHBoxLayout();
     QPushButton *btnAll = new QPushButton("全部", dialog); QPushButton *btnTry = new QPushButton("仅试穿", dialog); QPushButton *btnGen = new QPushButton("仅生图", dialog);
-    QString filterStyle = "QPushButton { background-color: #FFFFFF; color: #1D1D1F; border: 1px solid rgba(0,0,0,0.08); padding: 6px 16px; border-radius: 16px; font-size: 14px; } QPushButton:hover { background-color: #F5F5F7; } QPushButton:checked { background-color: #5856D6; color: white; border: none; }";
+    QString filterStyle = "QPushButton { background-color: #FFFFFF; color: #1D1D1F; border: 1px solid rgba(0,0,0,0.08); padding: 6px 16px; border-radius: 16px; font-size: 14px; border: none;} QPushButton:hover { background-color: #F5F5F7; } QPushButton:checked { background-color: #5856D6; color: white; border: none; }";
     btnAll->setCheckable(true); btnAll->setChecked(true); btnTry->setCheckable(true); btnGen->setCheckable(true);
     btnAll->setStyleSheet(filterStyle); btnTry->setStyleSheet(filterStyle); btnGen->setStyleSheet(filterStyle);
     topBar->addWidget(btnAll); topBar->addWidget(btnTry); topBar->addWidget(btnGen); topBar->addStretch();
@@ -1142,7 +1365,7 @@ void MainWindow::on_btnHistory_clicked() {
         QListWidgetItem *cur = listWidget->currentItem();
         if (!cur) { btnView->setEnabled(false); btnExport->setEnabled(false); btnRetry->setEnabled(false); btnDelete->setEnabled(false); return; }
         btnView->setEnabled(true); btnExport->setEnabled(true); btnDelete->setEnabled(true);
-        if (cur->data(Qt::UserRole + 1).toString() == "生图") { btnRetry->setEnabled(true); btnRetry->setStyleSheet("QPushButton { background-color: #5856D6; color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 600; }"); }
+        if (cur->data(Qt::UserRole + 1).toString() == "生图") { btnRetry->setEnabled(true); btnRetry->setStyleSheet("QPushButton { background-color: #5856D6; color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 600; border: none;}"); }
         else { btnRetry->setEnabled(false); btnRetry->setStyleSheet(actionStyle); }
     });
     auto doView = [=]() {
@@ -1169,13 +1392,13 @@ void MainWindow::on_btnHistory_clicked() {
         QString srcPath = cur->data(Qt::UserRole).toString();
         QString defaultPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + "/export_" + QDateTime::currentDateTime().toString("yyyyMMdd_hhmmss") + ".png";
         QString savePath = QFileDialog::getSaveFileName(dialog, "导出图片", defaultPath, "图片 (*.png *.jpg)");
-        if (!savePath.isEmpty() && QFile::copy(srcPath, savePath)) QMessageBox::information(dialog, "成功", "图片已导出！");
+        if (!savePath.isEmpty() && QFile::copy(srcPath, savePath)) showAppleMsgBox(dialog, "成功", "图片已导出！", {"知道了"});
     });
     connect(btnRetry, &QPushButton::clicked, this, [=]() {
         QListWidgetItem *cur = listWidget->currentItem(); if (!cur) return;
         QString path = cur->data(Qt::UserRole).toString();
         currentShirtPath = path; lastGeneratedImagePath = path;
-        if (currentBodyPath.isEmpty() || currentMaskPath.isEmpty()) { QMessageBox::warning(dialog, "缺少信息", "缺少人物图或遮罩，请重新开始试穿流程。"); dialog->accept(); return; }
+        if (currentBodyPath.isEmpty() || currentMaskPath.isEmpty()) { showAppleMsgBox(dialog, "缺少信息", "缺少人物图或遮罩，请重新开始试穿流程。", {"知道了"}); dialog->accept(); return; }
         dialog->accept(); currentStage = 3; updateSmartUI();
         lblStatus->setText("⏳ 正在使用历史服装重新试穿，请稍候..."); lblStatus->setStyleSheet(appleStatusStyle("#FF9500"));
         ensureComfyUIRunning([=]() { freeComfyMemory(); doTryOn(currentBodyPath, currentMaskPath); });
@@ -1183,11 +1406,11 @@ void MainWindow::on_btnHistory_clicked() {
     connect(btnDelete, &QPushButton::clicked, this, [=]() {
         QListWidgetItem *cur = listWidget->currentItem(); if (!cur) return;
         QString path = cur->data(Qt::UserRole).toString();
-        QMessageBox ask(dialog); ask.setWindowTitle("确认删除"); ask.setText("确定要删除这条历史记录吗？"); ask.setInformativeText("是否同时删除本地图片文件？");
-        QPushButton *btnYesDelFile = ask.addButton("删除记录和图片", QMessageBox::DestructiveRole);
-        QPushButton *btnJustDb = ask.addButton("仅删除记录", QMessageBox::YesRole);
-        ask.addButton("取消", QMessageBox::RejectRole); ask.exec();
-        bool deleteFile = false; if (ask.clickedButton() == btnYesDelFile) deleteFile = true; else if (ask.clickedButton() != btnJustDb) return;
+
+        int choice = showAppleMsgBox(dialog, "确认删除", "确定要删除这条记录吗？", {"删除图片", "仅删记录", "取消"});
+        if (choice == 2 || choice == -1) return;
+        bool deleteFile = (choice == 0);
+
         QSqlQuery q; q.prepare("DELETE FROM records WHERE result_path = :path"); q.bindValue(":path", path);
         if (q.exec()) { if (deleteFile) QFile::remove(path); if (btnAll->isChecked()) refreshGrid("全部"); else if (btnTry->isChecked()) refreshGrid("试穿"); else refreshGrid("生图"); }
     });
@@ -1228,7 +1451,9 @@ void MainWindow::showComparisonDialog() {
     p.drawLine(halfW, 0, halfW, canvasH);
     p.end();
 
-    QDialog dlg(this); dlg.setWindowTitle("试穿前后对比"); dlg.resize(1050, 700);
+    QDialog dlg(this); dlg.setWindowTitle("试穿前后对比");
+    dlg.setWindowFlags(dlg.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    dlg.resize(1050, 700);
     QVBoxLayout *layout = new QVBoxLayout(&dlg);
     QLabel *title = new QLabel("左：原图      右：试穿效果", &dlg);
     title->setAlignment(Qt::AlignCenter);
@@ -1243,14 +1468,14 @@ void MainWindow::showComparisonDialog() {
     QHBoxLayout *btns = new QHBoxLayout();
     QPushButton *btnSave = new QPushButton("💾 保存对比图", &dlg);
     QPushButton *btnOk = new QPushButton("✅ 完成", &dlg);
-    QString btnStyle = "QPushButton { background-color: #5856D6; color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 500; } QPushButton:hover { background-color: #4B49C4; }";
+    QString btnStyle = "QPushButton { background-color: #5856D6; color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 500; border: none; } QPushButton:hover { background-color: #4B49C4; }";
     btnSave->setStyleSheet(btnStyle); btnOk->setStyleSheet(btnStyle);
 
     connect(btnSave, &QPushButton::clicked, [&]() {
         QString savePath = QFileDialog::getSaveFileName(&dlg, "保存", QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + "/compare_" + QDateTime::currentDateTime().toString("yyyyMMdd_hhmmss") + ".png", "PNG (*.png)");
         if (!savePath.isEmpty()) {
             canvas.save(savePath);
-            QMessageBox::information(&dlg, "已保存", savePath);
+            showAppleMsgBox(&dlg, "成功", "已保存到：\n" + savePath, {"知道了"});
         }
     });
     connect(btnOk, &QPushButton::clicked, &dlg, &QDialog::accept);
@@ -1326,10 +1551,10 @@ void MainWindow::updateLoadingText() {
 }
 
 void MainWindow::on_btnSaveResult_clicked() {
-    if (currentResultPixmap.isNull()) { QMessageBox::warning(this, "无结果", "当前没有可保存的结果图。"); return; }
+    if (currentResultPixmap.isNull()) { showAppleMsgBox(this, "提示", "当前没有可保存的结果图。", {"知道了"}); return; }
     QString defaultPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + "/huanyi_result_" + QDateTime::currentDateTime().toString("yyyyMMdd_hhmmss") + ".png";
     QString savePath = QFileDialog::getSaveFileName(this, "保存结果图", defaultPath, "PNG 图片 (*.png);;JPG 图片 (*.jpg)");
-    if (!savePath.isEmpty() && currentResultPixmap.save(savePath)) QMessageBox::information(this, "保存成功", "已保存到：\n" + savePath);
+    if (!savePath.isEmpty() && currentResultPixmap.save(savePath)) showAppleMsgBox(this, "成功", "已保存到：\n" + savePath, {"知道了"});
 }
 
 QString MainWindow::findLatestMask() { return currentMaskPath; }

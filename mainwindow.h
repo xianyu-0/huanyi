@@ -86,13 +86,13 @@ private:
     QString lastMaskForReuse;                  // 可复用的遮罩
     QString currentPromptForRegen;             // 重新生成时的 prompt
 
-    // ==================== UI 控件（苹果紫版全部保留） ====================
+    // ==================== UI 控件（苹果紫极简版） ====================
     QLabel *lblImage = nullptr;                // 右侧主画布（白卡 20px 圆角 + 阴影）
-    QLabel *lblStatus = nullptr;               // 顶部状态胶囊（白底半透明）
+    QLabel *lblStatus = nullptr;               // 顶部状态条（白底圆角 10px）
     QPushButton *btnSmartAction = nullptr;     // 主操作按钮（苹果紫胶囊；卖家隐藏但指针有效）
     QPushButton *btnShowCompare = nullptr;     // 查看对比（试穿完成后出现）
-    QPushButton *btnWardrobe = nullptr;        // 衣橱按钮（苹果紫版隐藏占位，功能已移入侧栏）
-    QWidget *bottomSubRowWidget = nullptr;     // 底部子行（高度 0，兼容占位，防旧调用崩溃）
+    QPushButton *btnWardrobe = nullptr;        // 兼容占位（功能已移入侧栏，隐藏防崩溃）
+    QWidget *bottomSubRowWidget = nullptr;     // 兼容占位（高度 0，防旧调用崩溃）
     QPushButton *btnBackToHistory = nullptr;   // 历史接管时：返回列表
     QPushButton *btnUseHistoryImg = nullptr;   // 历史接管时：用此图试穿
 
@@ -108,9 +108,9 @@ private:
     int currentNodeMax = 0;
 
     // ==================== 布局与状态 ====================
-    void setupLayout();                        // 苹果紫版：侧栏 + 主区（本次重构重点）
-    void setupMenuBar();
-    void resetToHomeScreen();                  // 苹果紫版：欢迎页（本次重构重点）
+    void setupLayout();                        // 苹果极简版：左侧导航 + 右侧主区
+    void setupMenuBar();                       // 苹果极简版：透明顶栏，去掉工具菜单
+    void resetToHomeScreen();                  // 欢迎主页内容
     void updateSmartUI();
     void updateProgressUI();
 
